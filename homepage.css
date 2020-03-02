@@ -1,42 +1,30 @@
-#homepage_wrapper{
-    width: auto;
+.homepage_wrapper{
+    width: 1521px;
+    padding: 0;
 }
 
-#homepage_header{
-    height: auto;
-    width: auto;
+.homepage_header{
+    height: 100px;
 }
-
-#homepage_title{
-    background-color:rgb(10, 168, 207);
+.homepage_title{
+    background-color:#004D85;
     height: 80px;
     margin: 3px; 
 }
 
-#homepage_title li{
+.homepage_title li{
     display: inline-block; 
 }
 
-#ht1{
-    font-size: 60px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    
-   
-    color: white; 
-}
-#ht2{
-    font-size: 15px;
-    float:right inline-end ;
-    color: white; 
-}
 
-#navbar {
-    height: auto;
+
+.navbar {
+    height: 50px;
     margin: 2px;
     
 }
 
-#navbar ul {
+.navbar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -44,39 +32,81 @@
     background-color: #333;
   }
   
-  #navbar li {
+  .navbar li {
     float: left;
   }
   
-  #navbar li a {
-    display: inline-block;
+  .navbar li a {
+    display:inline-block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
   }
   
-  #navbar li a:hover {
+  .navbar li a:hover {
     background-color: rgb(10, 168, 207);;
   }
   
   
   .fling-minislide {
-    width:auto; 
     height: 500px; 
     overflow:hidden; 
-    position:relative; 
+    padding-top: 30px;
   }
   .fling-minislide img{ 
     position:absolute; 
     animation:fling-minislide 20s infinite; 
     opacity:0; 
-    width: 100%; 
-    height: auto;
+    width: 1509px; 
+    height: 500px;
   }
 
+  .games_column {
+    float: left;
+    width: 33.33%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  /* Clear floats after the columns */
+  .games_row_1:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 @keyframes fling-minislide {25%{opacity:1;} 40%{opacity:0;}}
 .fling-minislide img:nth-child(4){animation-delay:0s;}
 .fling-minislide img:nth-child(3){animation-delay:5s;}
 .fling-minislide img:nth-child(2){animation-delay:10s;}
 .fling-minislide img:nth-child(1){animation-delay:15s;}
+
+
+
+.footer {
+  color: white; 
+  display: flex;
+  flex-flow: row wrap;
+  border-top: 1px solid #e5e5e5;
+  bottom:0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width:1521px;
+  text-align:center;
+}
+
+.footer_column {
+  float: left;
+  width: 507px;
+  height: 200px; 
+  background-color:#004D85;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size:14px;
+
+}
+
+
+
+
+
+
+
