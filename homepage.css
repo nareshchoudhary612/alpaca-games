@@ -52,13 +52,13 @@
   .fling-minislide {
     height: 500px; 
     overflow:hidden; 
-    padding-top: 30px;
+    padding-top: 40px;
   }
   .fling-minislide img{ 
     position:absolute; 
     animation:fling-minislide 20s infinite; 
     opacity:0; 
-    width: 1509px; 
+    width: 1521px; 
     height: 500px;
   }
 
