@@ -1,5 +1,5 @@
 .homepage_wrapper{
-    width: 1521px;
+    width: 1509px;
     padding: 0;
 }
 
@@ -21,6 +21,7 @@
 .navbar {
     height: 50px;
     margin: 2px;
+    width: 1509px;
     
 }
 
@@ -53,13 +54,19 @@
     height: 500px; 
     overflow:hidden; 
     padding-top: 40px;
+    width: 1200px;
+    text-align: left; 
+    padding-left: 150px;
+    padding-right: 150px;
   }
   .fling-minislide img{ 
     position:absolute; 
     animation:fling-minislide 20s infinite; 
     opacity:0; 
-    width: 1521px; 
-    height: 500px;
+    width: 1200px; 
+    height: 500px; 
+    
+
   }
 
   .games_column {
@@ -75,6 +82,23 @@
     display: table;
     clear: both;
   }
+
+  .horizontal_bar
+  {
+ 
+  height: 50px;
+  margin: 0 auto;
+  border-top: 20px solid #4DB5FF;
+  border-bottom: 20px solid #4DB5FF;
+  text-align: center;
+  width: 1509px;
+ 
+  }
+  .horizontal_bar p
+  {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:14px;
+  }
 @keyframes fling-minislide {25%{opacity:1;} 40%{opacity:0;}}
 .fling-minislide img:nth-child(4){animation-delay:0s;}
 .fling-minislide img:nth-child(3){animation-delay:5s;}
@@ -89,14 +113,13 @@
   flex-flow: row wrap;
   border-top: 1px solid #e5e5e5;
   bottom:0;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  width:1521px;
+  width:1509px;
   text-align:center;
 }
 
 .footer_column {
   float: left;
-  width: 507px;
+  width: 503px;
   height: 200px; 
   background-color:#004D85;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
