@@ -5,7 +5,7 @@
   padding:0;
 }
 .homepage_wrapper{
-    width: 1509px;
+    width: 1350px;
 }
 
 .homepage_header{
@@ -13,8 +13,8 @@
 }
 .homepage_title{
     background-color:#004D85;
-    height: 90px;
-    margin: 3px; 
+    height: 90px;/* 
+    margin: 3px;  */
 }
 
 .homepage_title li{
@@ -25,7 +25,7 @@
 
 .navbar {
     height: 50px;
-    width: 1509px;
+    width: 1350px;
     
 }
 
@@ -56,8 +56,8 @@
   
   .fling-minislide {
     height: 500px; 
-    overflow:hidden; 
-    padding-top: 40px;
+    overflow:hidden; /* 
+    padding-top: 40px; */
     width: 1200px;
     text-align: left; 
 
@@ -66,7 +66,7 @@
     position:absolute; 
     animation:fling-minislide 20s infinite; 
     opacity:0; 
-    width: 1509px;
+    width: 1350px;
     height: 500px; 
     
 
@@ -93,7 +93,7 @@
   border-top: 20px solid #4DB5FF;
   border-bottom: 20px solid #4DB5FF;
   text-align: center;
-  width: 1509px;
+  width: 1350px;
   padding-top: 30px;
  
   }
@@ -115,7 +115,7 @@
   display:block;
   border-top: 1px solid #e5e5e5;
   bottom:0;
-  width:1509px;
+  width:1350px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size:14px;
 
@@ -125,7 +125,7 @@
 footer [class ^= 'footer-'] {
   width: 480px;
   display: inline-block;
-  height:230px;
+  height:223px;
   padding-top:10px;
  
 }
@@ -151,6 +151,64 @@ footer a {
   color: #eee;
 
 }
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 20%;
+  padding: 20px;
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #004D85;
+  height: 60%;
+  
+}
+
+.card_image{
+  float: center;
+  width: 100%;
+  height: 90%;
+  border: white solid;
+  border-image: 20px;
+  
+  
+
+}
+.card_container{
+ 
+}
+.card_name{
+  color: white;
+  float: left;
+}
+.card_button{
+    float: right;
+    background-color: rgb(243, 32, 17); 
+    border: none;
+    color: white;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 11px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
 
 /*Media Query */
 @media screen and (max-width: 700px) 
