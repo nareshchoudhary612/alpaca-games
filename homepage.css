@@ -109,27 +109,40 @@
 
 .footer {
   color: white; 
-  display: flex;
-  flex-flow: row wrap;
+  display:block;
   border-top: 1px solid #e5e5e5;
   bottom:0;
   width:1509px;
-  text-align:center;
-}
-
-.footer_column {
-  float: left;
-  width: 503px;
-  height: 200px; 
-  background-color:#004D85;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size:14px;
 
 }
 
 
+footer [class ^= 'footer-'] {
+  width: 490px;
+  display: inline-block;
+  height:230px;
+  padding-left: 10px;
+}
 
+footer .footer-left {
+  float: left;
 
+}
 
+footer .footer-right {
+float: right;
+}
+.footer_container
+{
+  background-color:#004D85;
+  clear:both;
+}
+footer a {
+  text-decoration: none;
+  color: #eee;
+
+}
 
 
