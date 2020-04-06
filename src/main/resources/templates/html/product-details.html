@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Alpaca Games</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../css/main.css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body id="home">
+
+	<!-- ####################  BANNER ############################################-->
+	<div>
+		<div class="title">
+			<img src="../images/icon.png" width="80px" height="80px">
+			<span>ALPACA GAMES</span>
+		</div>
+	</div>
+	<!-- #################### END OF BANNER ############################################-->
+
+	<!-- ##########################  NAVBAR ############################################-->
+	<nav class="navbar navbar-inverse " style="margin-bottom: 0px; border-radius: 0px;">
+		<!-- navbar-fixed-top -->
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Games</a></li>
+					<li><a href="#">Store</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- ###################### END OF  NAVBAR ############################################-->
+
+
+
+
+
+	<!-- ##### Single Product Details Area Start ##### -->
+	<section class="single_product_details_area d-flex align-items-center row">
+		<div id="product-desc-carousel" class="carousel slide col-sm-4" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+				<li data-target="#myCarousel" data-slide-to="3"></li>
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active">
+					<img src="../images/product-desc-images/RE_card.jpg" alt="pic1">
+					<div class="carousel-caption">
+
+					</div>
+				</div>
+
+				<div class="item">
+					<img src="../images/product-desc-images/RE_card3.jpg" alt="pic2">
+					<div class="carousel-caption">
+
+					</div>
+				</div>
+
+			
+
+			</div>
+		</div>
+		<!-- Single Product Description -->
+
+		<div class="single_product_desc clearfix col-sm-8">
+			<span>Capcom's</span>
+			<a href="cart.html">
+				<h2>Resident Evil 5</h2>
+			</a>
+			<p class="product-price"><span class="old-price">$65.00</span> $49.00</p>
+			<p class="product-desc" align="justify"> Contrary to popular belief, Lorem Ipsum is not simply random text.
+				It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard
+				McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure
+				he more obscure Latin words, consectetur, from a
+				Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the
+				undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
+				Malorum" (The Extremes of , and going through the cites of the word in classical literature, discovered the
+				undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
+				Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the
+				theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor
+				sit amet..", comes from a line in section 1.10.32nd going through the cites of the word in classical literature, discovered the
+				undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
+				Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the
+				theory of ethics, very popular during the Rena</p>
+
+			<!-- Symbols-->
+			<div class="product-desc-symbols row ">
+				<div class="test2 "> <img src="../images/symbols/tvr6y-gdze2.jpg"></div>
+
+
+
+			</div>
+
+			<!-- Form -->
+			<form class="cart-form clearfix" method="post">
+				<!-- Select Box -->
+				<div id="platform-dropdown">
+					<select name="select" id="Platform" class=" dropdown btn-lg">
+						<option value="value">Platform: XBox</option>
+						<option value="value">Platform: PS 3</option>
+						<option value="value">Platform: XBox ONE</option>
+						<option value="value">Platform: PS 4</option>
+					</select>
+				</div>
+				<!-- Cart & Favourite Box -->
+				<div class="cart-fav-box d-flex align-items-center ">
+					<!-- Cart -->
+					<button type="submit" name="addtocart" value="5" class="btn  essence-btn">Add to cart</button>
+
+				</div>
+			</form>
+		</div>
+	</section>
+	<!-- ##### Single Product Details Area End ##### -->
+
+
+
+
+	<!-- ##########################  FOOTER  ############################################-->
+	<footer class="footer-add">
+		<div class="container-fluid">
+			<!-- <div class="row">
+				<div class="col-sm-12">
+					<a class="up-arrow" href="#home" data-toggle="tooltip" title="" data-original-title="TO TOP">
+						<span class="glyphicon glyphicon-chevron-up"></span>
+					</a>
+				</div>
+			</div> -->
+			<div class="row">
+				<div class="col-sm-4">
+					<h3>Contact Us</h3>
+					<br>
+					<p>Aperiri sapientem an eum, id sed lorem dicam euismod, ridens
+						sensibus oportere et vel. Cum eu vivendum consulatu, modo sapientem
+						ea sed.</p>
+				</div>
+				<div class="col-sm-4">
+					<h3>Aplaca Games</h3>
+					<br>
+					<p>
+						One place for all <br>your gaming needs.<br> <br>Wehner
+						Building 4113 TAMU,<br> College Station, TX 77845
+					</p>
+					<br>
+					<p>
+						<small>&copy; Developed by Team 16 </small>
+					</p>
+				</div>
+				<div class="col-sm-4">
+					<h3>Contact Us</h3>
+					<br>
+					<p>Aperiri sapientem an eum, id sed lorem dicam euismod, ridens
+						sensibus oportere et vel. Cum eu vivendum consulatu, modo sapientem
+						ea sed.</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- ######################## END OF FOOTER ############################################-->
+
+
+
+</body>
+
+</html>
