@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.tamu.alpacagames.controller.GameController;
 import com.tamu.alpacagames.model.Game;
@@ -27,7 +28,7 @@ public class GameControllerImpl implements GameController {
 	}
 
 	@Override
-	@PostMapping("/newgame")
+	@PostMapping("/game")
 	public String gameForm(@ModelAttribute Game game) {
 		
 		game = gameService.createGame(game);
@@ -37,12 +38,14 @@ public class GameControllerImpl implements GameController {
 	
 	@Override
 	@GetMapping("/game/{id}")
-	public String getGameDetails( @PathVariable String id, Model model) {
+	public ModelAndView getGameDetails( @PathVariable String id, Model model) {
 		System.out.println(id);
-		model.addAttribute(gameService.getGameById(Long.parseLong(id)));
-		
-		return "html/product-details";
+		model.addAttribute("game",gameService.getGameById(Long.parseLong(id)).get());
+		System.out.println(gameService.getGameById(Long.parseLong(id)));
+		return new ModelAndView("/html/product-details");
 	}
+	
+	
 
 
 
