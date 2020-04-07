@@ -28,7 +28,7 @@ public class GameControllerImpl implements GameController {
 	}
 
 	@Override
-	@PostMapping("/game")
+	@PostMapping("/newgame")
 	public String gameForm(@ModelAttribute Game game) {
 		
 		game = gameService.createGame(game);
