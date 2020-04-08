@@ -30,7 +30,7 @@ public class HomepageControllerImpl implements HomepageController {
 	
 	
 	@Override
-	@GetMapping("/")
+	@GetMapping(value={"/","/index.html"})
 	public ModelAndView getFrontGames(Model model) {
 		model.addAttribute("games", gameService.getHomepageGames());
 		//List<Game> homepageGames = gameService.getHomepageGames();
