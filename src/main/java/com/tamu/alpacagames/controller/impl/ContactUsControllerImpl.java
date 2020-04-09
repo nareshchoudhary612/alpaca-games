@@ -13,7 +13,7 @@ public class ContactUsControllerImpl {
 	//@GetMapping("/contactus")
 	@RequestMapping(value = "/contactus", method = RequestMethod.GET)
 	public ModelAndView getContactPage() {
-		return new ModelAndView("html/Contact_Form");
+		return new ModelAndView("html/contact_us");
 	}
 	
 	@RequestMapping(value = "/aboutus", method = RequestMethod.GET)
