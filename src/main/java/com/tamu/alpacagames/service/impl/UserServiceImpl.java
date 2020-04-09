@@ -1,5 +1,7 @@
 package com.tamu.alpacagames.service.impl;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,15 @@ public class UserServiceImpl implements UserService{
 	public Users createUser(Users user) {
 		
 		return userRepository.save(user);
+	}
+
+	@Override
+	public boolean validateUser(Users user) {
+		
+		Optional<Users> fetchedUser = userRepository.findByUsername(user.getUsername());
+		
+		//return (fetchedUser.isPresent() && fetchedUser.get().getPassword().equals(user.getPassword()))?true:false;
+		return (fetchedUser.isPresent() && fetchedUser.get().getPassword().equals(user.getPassword()))?true:false;
 	}
 
 }
