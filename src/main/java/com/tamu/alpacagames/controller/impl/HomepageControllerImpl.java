@@ -24,12 +24,18 @@ public class HomepageControllerImpl implements HomepageController {
 	 * @GetMapping("/") public List<Game> getFrontGames() { List<Game>
 	 * homepageGames = gameService.getHomepageGames(); return homepageGames; }
 	 */
-	@Override
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public ModelAndView getFrontGames(Model model) {
-		model.addAttribute("games", gameService.getHomepageGames());
+	public ModelAndView getFrontGames() {
+		//model.addAttribute("games", gameService.getHomepageGames());
 		//List<Game> homepageGames = gameService.getHomepageGames();
 		return new ModelAndView("/html/index");
+	}
+
+	@Override
+	public ModelAndView getFrontGames(Model model) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
