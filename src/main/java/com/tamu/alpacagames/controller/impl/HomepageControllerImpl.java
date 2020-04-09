@@ -15,7 +15,7 @@ import com.tamu.alpacagames.controller.HomepageController;
 import com.tamu.alpacagames.model.Game;
 import com.tamu.alpacagames.service.GameService;
 
-@RestController
+@Controller
 public class HomepageControllerImpl implements HomepageController {
 	
 	@Autowired
@@ -30,7 +30,7 @@ public class HomepageControllerImpl implements HomepageController {
 	
 	
 	@Override
-	@GetMapping(value={"/*","/","/index.html"})
+	@GetMapping(value={"/"})
 	public ModelAndView getFrontGames(Model model) {
 		model.addAttribute("games", gameService.getHomepageGames());
 		//List<Game> homepageGames = gameService.getHomepageGames();
