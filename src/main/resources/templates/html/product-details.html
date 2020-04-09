@@ -120,10 +120,10 @@
 			</div>
 
 			<!-- Form -->
-			<form class="cart-form clearfix" method="post">
+			<form class="cart-form clearfix" method="post" action="/addtocart" th:action="@{/addtocart}">
 				<!-- Select Box -->
 				<div id="platform-dropdown">
-					<select name="select" id="Platform" class=" dropdown btn-lg">
+					<select th:field="*{username}" name="username" id="Platform" class=" dropdown btn-lg">
 						<option value="value">Platform: XBox</option>
 						<option value="value">Platform: PS 3</option>
 						<option value="value">Platform: XBox ONE</option>
