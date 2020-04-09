@@ -1,5 +1,30 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<script>
+		var loggedin = false;
+		
+		function showLoginButton(){
+			
+			if(loggedin){
+				document.getElementById('.loggedIn').style.display = "none";
+			}
+			else{
+				document.getElementById('.loggedOut').style.display = "none";
+			}
+			
+	}
+		
+		 document.getElementById(".loggedIn").onclick = function() { 
+			  
+	            document.getElementById(".loggedIn").style.display = "none"; 
+	  
+	        } 
+
+</script>
+
+
+
 	<head>
 		<title>Alpaca Games</title>
     	<meta charset="utf-8">
@@ -35,7 +60,7 @@
 		    </div>
 		    <div class="collapse navbar-collapse" id="myNavbar">
 		      <ul class="nav navbar-nav">
-				<li ><a href="index.html">Home</a></li>
+				<li ><a href="/">Home</a></li>
 		        <li><a href="#">Games</a></li>
 		        <li><a href="#">Store</a></li>
 		        <li><a href="#">Contact</a></li>
