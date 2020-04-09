@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -30,11 +31,11 @@ public class HomepageControllerImpl implements HomepageController {
 	
 	
 	@Override
-	@GetMapping(value={"/"})
+	@RequestMapping("/")
 	public ModelAndView getFrontGames(Model model) {
 		model.addAttribute("games", gameService.getHomepageGames());
 		//List<Game> homepageGames = gameService.getHomepageGames();
-		return new ModelAndView("/html/index.html");
+		return new ModelAndView("/html/index");
 	}
 	
 	
