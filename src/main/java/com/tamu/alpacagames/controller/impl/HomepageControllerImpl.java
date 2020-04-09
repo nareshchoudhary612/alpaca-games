@@ -29,7 +29,7 @@ public class HomepageControllerImpl implements HomepageController {
 	public ModelAndView getFrontGames() {
 		//model.addAttribute("games", gameService.getHomepageGames());
 		//List<Game> homepageGames = gameService.getHomepageGames();
-		return new ModelAndView("/html/index");
+		return new ModelAndView("html/index");
 	}
 
 	@Override
