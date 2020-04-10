@@ -82,12 +82,12 @@
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<img src="../images/RE_card.jpg" alt="pic1">
+					<img th:src="'../'+${game.imageUrl}" alt="pic1">
 					<div class="carousel-caption"></div>
 				</div>
 
 				<div class="item">
-					<img src="../images/RE_card3.jpg" alt="pic2">
+					<img th:src="'../'+${game.imageUrl1}" alt="pic2">
 					<div class="carousel-caption"></div>
 				</div>
 			</div>
@@ -109,27 +109,24 @@
 				<div class="test2 ">
 					<img src="../images/tvr6y-gdze2.jpg">
 				</div>
-
-
-
 			</div>
 
 			<!-- Form -->
-			<form class="cart-form clearfix" th:action="@{/addtocart}" action="/addtocart" th:object="${cart}" method="post" role="form">
+			<form class="cart-form clearfix" th:action="@{/cart}" action="cart" th:object="${cart}" method="post" role="form">
 				<!-- Select Box -->
 				<div id="platform-dropdown">
 					<select th:field="*{platform}" name="platform" id="Platform" class=" dropdown btn-lg">
-						<option value="value">Platform: XBox</option>
-						<option value="value">Platform: XBox ONE</option>
-						<option value="value">Platform: PS 3</option>
-						<option value="value">Platform: PS 4</option>
-						<option value="value">Platform: PC</option>
+						<option value="xbox">Platform: XBox</option>
+						<option value="xbox1">Platform: XBox ONE</option>
+						<option value="ps3">Platform: PS 3</option>
+						<option value="ps4">Platform: PS 4</option>
+						<option value="pc">Platform: PC</option>
 					</select>
 				</div>
 				<!-- Cart & Favourite Box -->
 				<div class="cart-fav-box d-flex align-items-center ">
 					<!-- Cart -->
-					<button type="submit" name="addtocart" value="5"
+					<button type="submit" name="cart" value="5"
 						class="btn  essence-btn">Add to cart</button>
 
 				</div>
