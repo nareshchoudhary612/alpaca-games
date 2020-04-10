@@ -42,6 +42,7 @@ public class GameControllerImpl implements GameController {
 	public ModelAndView getGameDetails( @PathVariable String id, Model model) {
 		System.out.println(id);
 		model.addAttribute("game",gameService.getGameById(Long.parseLong(id)).get());
+		System.out.println(gameService.getGameById(Long.parseLong(id)).get().getImageUrl1());
 		model.addAttribute("cart", new OrderLine());
 		System.out.println(gameService.getGameById(Long.parseLong(id)));
 		return new ModelAndView("html/product-details");
