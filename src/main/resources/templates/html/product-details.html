@@ -77,8 +77,6 @@
 			<ol class="carousel-indicators">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
-				<li data-target="#myCarousel" data-slide-to="3"></li>
 			</ol>
 
 			<!-- Wrapper for slides -->
@@ -92,9 +90,6 @@
 					<img src="../images/RE_card3.jpg" alt="pic2">
 					<div class="carousel-caption"></div>
 				</div>
-
-
-
 			</div>
 		</div>
 		<!-- Single Product Description -->
@@ -120,14 +115,15 @@
 			</div>
 
 			<!-- Form -->
-			<form class="cart-form clearfix" method="post" action="/addtocart" th:action="@{/addtocart}">
+			<form class="cart-form clearfix" th:action="@{/addtocart}" action="/addtocart" th:object="${cart}" method="post" role="form">
 				<!-- Select Box -->
 				<div id="platform-dropdown">
-					<select th:field="*{username}" name="username" id="Platform" class=" dropdown btn-lg">
+					<select th:field="*{platform}" name="platform" id="Platform" class=" dropdown btn-lg">
 						<option value="value">Platform: XBox</option>
-						<option value="value">Platform: PS 3</option>
 						<option value="value">Platform: XBox ONE</option>
+						<option value="value">Platform: PS 3</option>
 						<option value="value">Platform: PS 4</option>
+						<option value="value">Platform: PC</option>
 					</select>
 				</div>
 				<!-- Cart & Favourite Box -->
