@@ -11,9 +11,14 @@ import com.tamu.alpacagames.model.OrderLine;
 @Controller
 public class AddToCartImpl{
 
-	@RequestMapping(value = "/addtocart", method = RequestMethod.POST)
-	public ModelAndView addUser(@ModelAttribute("cart") OrderLine cart) {
-		System.out.println();
+	@RequestMapping(value = "/cart", method = RequestMethod.POST)
+	public ModelAndView addCart(@ModelAttribute("cart") OrderLine cart) {
+		System.out.println("---------------"+cart.getPlatform());
+		return new ModelAndView("html/cart");
+	}
+	
+	@RequestMapping(value = "/checkout", method = RequestMethod.GET)
+	public ModelAndView showCart(@ModelAttribute("cart") OrderLine cart) {
 		return new ModelAndView("html/cart");
 	}
 
