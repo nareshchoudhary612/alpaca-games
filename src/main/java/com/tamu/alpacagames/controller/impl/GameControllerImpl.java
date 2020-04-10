@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.tamu.alpacagames.controller.GameController;
 import com.tamu.alpacagames.model.Game;
+import com.tamu.alpacagames.model.OrderLine;
 import com.tamu.alpacagames.service.GameService;
 
 @Controller
@@ -41,12 +42,10 @@ public class GameControllerImpl implements GameController {
 	public ModelAndView getGameDetails( @PathVariable String id, Model model) {
 		System.out.println(id);
 		model.addAttribute("game",gameService.getGameById(Long.parseLong(id)).get());
+		model.addAttribute("cart", new OrderLine());
 		System.out.println(gameService.getGameById(Long.parseLong(id)));
-		return new ModelAndView("/html/product-details");
+		return new ModelAndView("html/product-details");
 	}
-	
-	
-
 
 
 }
