@@ -21,6 +21,12 @@ public class GameControllerImpl implements GameController {
 	@Autowired
 	GameService gameService;
 	
+	
+	@GetMapping("/games")
+	public String gamePage() {
+		return "html/Games";
+	}
+	
 	@Override
 	@GetMapping("/newgame")
 	public String gameForm(Model model) {
@@ -47,8 +53,5 @@ public class GameControllerImpl implements GameController {
 		System.out.println(gameService.getGameById(Long.parseLong(id)));
 		return new ModelAndView("html/product-details");
 	}
-	
-	
-
 
 }

@@ -131,6 +131,7 @@
 
 			<!-- Form -->
 			<form class="cart-form clearfix" th:action="@{/cart}" action="cart" th:object="${cart}" method="post" role="form">
+				<input type="hidden" name="gameId" th:value="${game.gameId}"></input>
 				<!-- Select Box -->
 				<div id="platform-dropdown">
 					<select th:field="*{platform}" name="platform" id="Platform" class=" dropdown btn-lg">
