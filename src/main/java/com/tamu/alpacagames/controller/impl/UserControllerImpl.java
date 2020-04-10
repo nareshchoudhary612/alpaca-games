@@ -29,7 +29,7 @@ public class UserControllerImpl extends UserController {
 		ModelAndView mav = null;
 		boolean loginFlag = userService.validateUser(user);
 		if (loginFlag) {
-			mav = new ModelAndView("html/index.html");
+			mav = new ModelAndView("redirect:index.html");
 			//mav.addObject("username", user.getUsername());
 		} else {
 			mav = new ModelAndView("html/login");
