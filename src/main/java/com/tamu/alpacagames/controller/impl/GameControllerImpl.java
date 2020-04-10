@@ -47,6 +47,8 @@ public class GameControllerImpl implements GameController {
 		System.out.println(gameService.getGameById(Long.parseLong(id)));
 		return new ModelAndView("html/product-details");
 	}
+	
+	
 
 
 }
