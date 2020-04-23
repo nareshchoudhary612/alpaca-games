@@ -2,6 +2,7 @@ package com.tamu.alpacagames.controller.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -9,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.tamu.alpacagames.controller.UserController;
 import com.tamu.alpacagames.model.Users;
+import com.tamu.alpacagames.service.GameService;
 import com.tamu.alpacagames.service.UserService;
 
 @Controller
@@ -17,12 +19,22 @@ public class UserControllerImpl implements UserController {
 	@Autowired
 	UserService userService;
 	
+	@Autowired
+	GameService gameService;
+	
 	@Override
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView showLogin() {
 		ModelAndView mav = new ModelAndView("html/login");
 		mav.addObject("user", new Users());
 		return mav;
+	}
+	
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public ModelAndView homePage(Model model) {
+		model.addAttribute("games", gameService.getHomepageGames());
+		//List<Game> homepageGames = gameService.getHomepageGames();
+		return new ModelAndView("html/home");
 	}
 	
 	@Override
