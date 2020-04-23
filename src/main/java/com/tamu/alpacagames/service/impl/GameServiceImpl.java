@@ -21,6 +21,12 @@ public class GameServiceImpl implements GameService {
 		
 		return gameRepository.findByhomepageFlag(true);
 	}
+	
+	@Override
+	public List<Game> getGames() {
+		
+		return gameRepository.findAll();
+	}
 
 	@Override
 	public Game createGame(Game game) {
@@ -33,5 +39,22 @@ public class GameServiceImpl implements GameService {
 		
 		return gameRepository.findById(id);
 	}
+
+	@Override
+	public void deleteById(Long id) {
+		 gameRepository.deleteById(id);
+		
+		 
+	}
+
+	@Override
+	public void save(Game game) {
+		
+		
+		gameRepository.saveAndFlush(game);
+		
+	}
+	
+	
 
 }

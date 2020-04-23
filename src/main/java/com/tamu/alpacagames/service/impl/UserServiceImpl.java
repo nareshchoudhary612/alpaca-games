@@ -1,5 +1,6 @@
 package com.tamu.alpacagames.service.impl;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,18 @@ public class UserServiceImpl implements UserService{
 		
 		//return (fetchedUser.isPresent() && fetchedUser.get().getPassword().equals(user.getPassword()))?true:false;
 		return (fetchedUser.isPresent() && fetchedUser.get().getPassword().equals(user.getPassword()))?true:false;
+	}
+	
+	
+	@Override
+	public List<Users> getUsers(){
+		return userRepository.findAll();
+	}
+
+	@Override
+	public void deleteById(Long id) {
+		userRepository.deleteById(id);
+		
 	}
 
 }

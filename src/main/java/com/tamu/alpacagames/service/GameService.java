@@ -12,4 +12,10 @@ public interface GameService {
 	Game createGame(Game game);
 	
 	Optional<Game> getGameById(Long id);
+
+	List<Game> getGames();
+
+	void deleteById(Long id);
+
+	void save(Game game);
 }

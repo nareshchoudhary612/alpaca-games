@@ -12,18 +12,20 @@ import com.tamu.alpacagames.model.Users;
 import com.tamu.alpacagames.service.UserService;
 
 @Controller
-public class UserControllerImpl extends UserController {
+public class UserControllerImpl implements UserController {
 
 	@Autowired
 	UserService userService;
-
+	
+	@Override
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView showLogin() {
 		ModelAndView mav = new ModelAndView("html/login");
 		mav.addObject("user", new Users());
 		return mav;
 	}
-
+	
+	@Override
 	@RequestMapping(value = "/loginProcess", method = RequestMethod.POST)
 	public ModelAndView loginProcess(@ModelAttribute("user") Users user) {
 		ModelAndView mav = null;
