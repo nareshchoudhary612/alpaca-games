@@ -1,0 +1,19 @@
+
+		<div>
+			<div class="col-sm-3" th:each="game : ${games}">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<span th:text="${game.name}"></span>
+					</div>
+					<div class="panel-body">
+						<img th:src="${game.imageUrl}" class="card_image"
+							style="width: 100%" alt="Image">
+					</div>
+					<div class="panel-footer">
+						<form th:action="'game/' + ${game.gameId}" method="get">
+							<button type="submit" class="card_button btn pull-right">BuyNow</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
