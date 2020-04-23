@@ -1,0 +1,157 @@
+<!-- <!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>New Game Form</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+ -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>Login Page</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/login.css">
+<link rel="stylesheet" href="../css/footer.css">
+<link rel="shortcut icon" type="../images/icon.png"
+	href="../images/icon.png" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+</head>
+
+<body id="adminHomepage">
+	<div>
+		<div class="title">
+			<img src="../images/icon.png" width="80px" height="80px"
+				style="vertical-align: text-bottom;"> <span>aLPACA
+				GAMES</span>
+		</div>
+	</div>
+	<nav class="navbar navbar-inverse "
+		style="margin-bottom: 0px; border-radius: 0px;">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="/">Home</a></li>
+					<li><a href="#">Games</a></li>
+					<li><a href="/contactus">Contact</a></li>
+					<li><a href="/aboutus">About</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/login"><span
+							class="glyphicon glyphicon-user"></span> Login</a></li>
+					<li><a href="/checkout"><span
+							class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+				</ul>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<h1>Form</h1>
+	<div class="row">
+		<div class="col-md-3"></div>
+		<div class="col-md-6">
+			<form action="new" th:object="${game}" method="post">
+				<p>
+					Game Name: <input type="text" th:field="*{name}" />
+				</p>
+				<p>
+					Creater: <input type="text" th:field="*{creater}" />
+				</p>
+				<p>
+					Genre: <input type="text" th:field="*{genre}" />
+				</p>
+				<p>
+					Description: <input type="text" th:field="*{description}" />
+				</p>
+				<p>
+					imageUrl: <input type="text" th:field="*{imageUrl}" />
+				</p>
+				<p>
+					imageUrl1: <input type="text" th:field="*{imageUrl1}" />
+				</p>
+				<p>
+					imageUrl2: <input type="text" th:field="*{imageUrl2}" />
+				</p>
+				<p>
+					<!--  Platform Type: <input type="text" th:field="*{platformType}" /> -->
+					Platform Type: <select th:field="*{platformType}">
+						<option value="XBox">XBox</option>
+						<option value="PS4">PS 4</option>
+						<option value="PS3">PS 3</option>
+					</select>
+				</p>
+				<p>
+					<!--  Age Category: <input type="text" th:field="*{ageCategory}" />-->
+					Age Category: <select th:field="*{ageCategory}">
+						<option value="1">5-10 Year</option>
+						<option value="2">10-20 Year</option>
+						<option value="3">20+ Year</option>
+					</select>
+				</p>
+				<p>
+					<!-- Available?: <input type="text" th:field="*{available}" />  -->
+					Available? <select th:field="*{available}">
+						<option value="true">Yes</option>
+						<option value="false">No</option>
+					</select>
+				</p>
+				<p>
+					Discount: <input type="text" th:field="*{discount}" />
+				</p>
+				<p>
+					Price: <input type="text" th:field="*{price}" />
+				</p>
+				<p>
+					HomePage Flag?: <select th:field="*{homepageFlag}">
+						<option value="true">Yes</option>
+						<option value="false">No</option>
+					</select>
+				</p>
+				<p>
+					<input type="submit" value="Submit" /> <input type="reset"
+						value="Reset" />
+				</p>
+			</form>
+		</div>
+		<div class="col-md-3"></div>
+	</div>
+</body>
+
+<!-- #######################3 Start of Footer #########################33 -->
+<footer class="footer-distributed">
+
+	<div class="footer-right">
+
+		<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
+			class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a>
+		<a href="#"><i class="fa fa-github"></i></a>
+
+	</div>
+	<div class="footer-left">
+		<p class="footer-links">
+			<a href="/">Home</a> <a href="#">Games</a> <a href="/contactus">Contact</a>
+			<a href="/aboutus">About</a>
+		</p>
+		<p>Alpaca Games &copy; 2020</p>
+	</div>
+</footer>
+</html>
