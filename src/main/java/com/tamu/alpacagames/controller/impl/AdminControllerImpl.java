@@ -28,7 +28,7 @@ public class AdminControllerImpl {
 	@Autowired
 	GameService gameService;
 
-	@GetMapping("adminHomepage.html")
+	@GetMapping(value= {"/","adminHomepage.html"}) 
 	public String getAdminHomePage() {
 		return "html/adminHomepage.html";
 	}
