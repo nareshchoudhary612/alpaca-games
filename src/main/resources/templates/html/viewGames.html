@@ -5,41 +5,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/main.css">
-<link rel="stylesheet" href="../css/login.css">
 <link rel="stylesheet" href="../css/footer.css">
-<link rel="shortcut icon" type="../images/icon.png"
-	href="../images/icon.png" />
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-<style>
-table {
-	font-family: arial, sans-serif;
-	border-collapse: collapse;
-	width: 100%;
-}
-
-td, th {
-	border: 1px solid #dddddd;
-	text-align: left;
-	padding: 7px;
-	margin: 2px;
-}
-
-tr:nth-child(even) {
-	background-color: #dddddd;
-}
-
-.viewGamesButton1, .viewGamesButton2 {
-	display: inline:block;
-}
-</style>
+<link rel="shortcut icon" type="../images/icon.png" 	href="../images/icon.png" />
+<link rel="stylesheet" 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 </head>
 
@@ -51,8 +22,7 @@ tr:nth-child(even) {
 				GAMES</span>
 		</div>
 	</div>
-	<nav class="navbar navbar-inverse "
-		style="margin-bottom: 0px; border-radius: 0px;">
+	<nav class="navbar navbar-inverse " style="margin-bottom: 0px; border-radius: 0px;">
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -83,36 +53,32 @@ tr:nth-child(even) {
 
 
 	<div class="container">
-		<div>
+		<div class="page-header">
 			<h1>Games</h1>
 		</div>
-		<div>
-			<table>
-				<thead>
+		<div class="table-responsive-sm">
+			<table class="table table-sm table-striped">
+						<thead class="thead-light">
 					<tr>
-						<th>Game ID</th>
-						<th>Game</th>
-						<th>Creator</th>
-						<th>Genre</th>
-						<th>Image URL</th>
-						<th>Image URL1</th>
-						<th>Platform Type</th>
-						<th>Age Cate</th>
-						<th>Price</th>
-						<th>Sale Price</th>
-						<th>Home Flag</th>
-						<th>Edit</th>
-						<th>Delete</th>
+						<th class="col text-center">Game ID</th>
+						<th class="col text-center">Game</th>
+						<th class="col text-center">Creator</th>
+						<th class="col text-center">Genre</th>
+						<th class="col text-center">Image URL</th>
+						<th class="col text-center">Image URL1</th>
+						<th class="col text-center">Platform Type</th>
+						<th class="col text-center">Age Category</th>
+						<th class="col text-center">Price</th>
+						<th class="col text-center">Sale Price</th>
+						<th class="col text-center">Home Flag</th>
+						<th class="col text-center">Edit</th>
+						<th class="col text-center">Delete</th>
 
 					</tr>
 				</thead>
 				<tbody>
-					<!-- <tr th:if="${games.empty}">
-						<td colspan="2">No Game Available</td>
-					</tr>
-					 -->
 					<tr th:each="game : ${games}">
-						<td><span th:text="${game.gameId}"> Game Id </span></td>
+						<td class="col text-center"><span th:text="${game.gameId}"> Game Id </span></td>
 						<td><span th:text="${game.name}"> Game </span></td>
 						<td><span th:text="${game.creater}"> Game </span></td>
 						<td><span th:text="${game.genre}"> Game </span></td>
@@ -120,7 +86,7 @@ tr:nth-child(even) {
 						<td><span th:text="${game.imageUrl1}"> Game </span></td>
 
 						<td><span th:text="${game.platformType}"> Game </span></td>
-						<td><span th:text="${game.ageCategory}"> Game </span></td>
+						<td class="col text-center"><span th:text="${game.ageCategory}"> Game </span></td>
 
 						<td><span th:text="'$'+${game.price}"> Game </span></td>
 						<td><span th:text="'$'+${game.discount}">D Price </span></td>
@@ -130,20 +96,17 @@ tr:nth-child(even) {
 
 						<td>
 							<form th:action="'game/edit/' + ${game.gameId}" method="get">
-								<button type="submit"
-									class="card_button btn-primary btn pull-right">Edit</button>
+							<button type="submit" class="card_button btn-primary btn pull-right">Edit</button>
 							</form>
 						</td>
 						<td>
 							<form th:action="'game/delete/' + ${game.gameId}" method="post">
-
-								<button type="submit" class="card_button btn pull-right">Delete
-								</button>
+							<button type="submit" class="card_button btn pull-right" >Delete</button>
 							</form>
 						</td>
 					</tr>
 					<br>
-					<br>
+
 				</tbody>
 
 			</table>
@@ -157,13 +120,13 @@ tr:nth-child(even) {
 				<div class="col-md-4"></div>
 				<div class="col-md-2">
 					<form action="game/new" method="get">
-						<button type="submit" class=" viewGamesButton1 btn btn-primary ">Add
+						<button type="submit" class=" viewGamesButton1 btn btn-primary " style="color:#fff;background-color:#204a86ba;">Add
 							New Game</button>
 					</form>
 				</div>
 				<div class="col-md-2">
 					<form action="adminHomepage.html" method="get">
-						<button type="submit" class=" viewGamesButton1 btn btn-primary ">Go Admin Home</button>
+						<button type="submit" class=" viewGamesButton1 btn btn-primary " style="color:#fff;background-color:#204a86ba;">Admin Home</button>
 					</form>
 				</div>
 

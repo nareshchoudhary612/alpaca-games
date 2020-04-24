@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
-<title>Login Page</title>
+<title>Admin Home Page</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/main.css">
-<link rel="stylesheet" href="../css/login.css">
 <link rel="stylesheet" href="../css/footer.css">
-<link rel="shortcut icon" type="../images/icon.png"
-	href="../images/icon.png" />
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="shortcut icon" type="../images/icon.png" 	href="../images/icon.png" />
+<link rel="stylesheet" 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 </head>
 
@@ -60,23 +54,23 @@
 
 
 
-	<div class="container">
-		
-		
-	
-		
+	<div class="container">	
+		<div class="page-header">
+			<h1>Admin HomePage</h1>
+		</div>
 		<div class = "row">
-			<div class="col-sm-4 panel panel-primary">
-				<a href="games"> View All Games</a>
-			</div>
-			<div class="col-sm-4 panel panel-primary">
-				<a href="users"> View All Users</a>
-			</div>
-			<div class="col-sm-4 panel panel-primary">
-				<a href="admin/orders"> View All Orders</a>
+	
+	    <div class="panel panel-default">
+	     <div class="panel-heading">Admin Panel </div>
+			<div class="panel-body">
+				<a href="games"  class="btn btn-primary"> View All Games</a>			
+			
+				<a href="users"  class="btn btn-primary"> View All Users</a>			
+			
+				<a href="admin/orders"  class="btn btn-primary"> View All Orders</a>
 			</div>
 		</div>
-		
+		</div>
 	</div>
 
 	<br>

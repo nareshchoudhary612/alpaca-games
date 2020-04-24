@@ -5,37 +5,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/main.css">
-<link rel="stylesheet" href="../css/login.css">
 <link rel="stylesheet" href="../css/footer.css">
-<link rel="shortcut icon" type="../images/icon.png"
-	href="../images/icon.png" />
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-<style>
-table {
-	font-family: arial, sans-serif;
-	border-collapse: collapse;
-	width: 100%;
-}
-
-td, th {
-	border: 1px solid #dddddd;
-	text-align: left;
-	padding: 7px;
-	margin: 2px;
-}
-
-tr:nth-child(even) {
-	background-color: #dddddd;
-}
-</style>
+<link rel="shortcut icon" type="../images/icon.png" href="../images/icon.png" />
+<link rel="stylesheet" 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/view.css">
 
 </head>
 
@@ -79,19 +56,22 @@ tr:nth-child(even) {
 
 
 	<div class="container">
-		<div>
+		<div class="page-header">
 			<h1>Users</h1>
 		</div>
-		<div>
-			<table>
-				<thead>
+		<div class="table-responsive-sm">
+			<table class="table table-sm table-striped">
+				<thead class="thead-light">
 					<tr>
-						<th>Username</th>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Email</th>
-						<th>Address</th>
-						<th>Phone No.</th>
+						<th class="col text-center ">User ID</th>
+						<th class="col text-center">Username</th>
+						<th class="col text-center">Password</th>
+						<th class="col text-center">First Name</th>
+						<th class="col text-center">Last Name</th>
+						<th class="col text-center">Email</th>
+						<th class="col text-center">Address</th>
+						<th class="col text-center">Phone No.</th>
+						<th class="col text-center">Delete</th>
 
 					</tr>
 				</thead>
@@ -101,21 +81,20 @@ tr:nth-child(even) {
 					</tr>
 					 -->
 					<tr th:each="user : ${users}">
-						<td><span th:text="${user.userId}"> User Id </span></td>
+						<td class="col text-center"><span th:text="${user.userId}">
+								User Id </span></td>
 						<td><span th:text="${user.username}"> User Id </span></td>
 						<td><span th:text="${user.password}"> User </span></td>
 						<td><span th:text="${user.firstname}"> User </span></td>
 						<td><span th:text="${user.lastname}"> User </span></td>
 						<td><span th:text="${user.email}"> User </span></td>
 						<td><span th:text="${user.address}"> User </span></td>
-						<td><span th:text="${user.phone}"> User </span></td>
+						<td class="col text-center"><span th:text="${user.phone}"> User </span></td>
 
 
 						<td>
 							<form th:action="'user/delete/' + ${user.userId}" method="post">
-
-								<button type="submit" class="card_button btn pull-right">Delete
-								</button>
+								<button type="submit" class="card_button btn pull-right">Delete</button>
 							</form>
 						</td>
 					</tr>
@@ -132,7 +111,7 @@ tr:nth-child(even) {
 
 		<div class="col-md-2">
 			<form action="adminHomepage.html" method="get">
-				<button type="submit" class=" viewGamesButton1 btn btn-primary ">Go
+				<button type="submit" class=" btn btn-primary" style="color:#fff;background-color:#204a86ba;">
 					Admin Home</button>
 			</form>
 		</div>
