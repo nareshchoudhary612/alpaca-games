@@ -4,59 +4,66 @@
 <title>View Users</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../css/main.css">
+
 <link rel="stylesheet" href="../css/footer.css">
 
-<link rel="shortcut icon" type="../images/icon.png" href="../images/icon.png" />
-<link rel="stylesheet" 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="../css/view.css">
-
+<link rel="shortcut icon" type="../images/icon.png"
+	href="../images/icon.png" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body id="adminViewUsers">
 
-<nav class="navbar navbar-default navbar-fixed-top navbar-inverse " style="position:sticky;" >
-		  <div class="container-fluid">
-		    <div class="navbar-header">
-		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>                        
-		      </button>
-		      <div class="title" style="    position: absolute;">
-				<a href="/">
-  				<img src="../../../images/icon.png" width="80px" height="80px" style="vertical-align: text-bottom;" >
-				<span style="position: fixed;font-size: xx-large;">aLPACA GAMES</span>
-				</a>
-  			  </div>
-		    </div>
-		    <div class="collapse navbar-collapse" id="myNavbar">
-		      <ul class="nav navbar-nav navbar-right">
-		        <li><a href="/">Home</a></li>
-				<li><a href="/games">Games</a></li>
-				<li><a href="/contactus">Contact</a></li>
-				<li><a href="/aboutus">About</a></li>
-				<li><a href="/login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
-				<li><a href="/checkout"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-		      </ul>
-		    </div>
-		  </div>
-		</nav>
+	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse "
+		style="position: sticky;">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<div class="title" style="position: absolute;">
+					<a href="/"> <img src="../../../images/icon.png" width="80px"
+						height="80px" style="vertical-align: text-bottom;"> <span
+						style="position: fixed; font-size: xx-large;">aLPACA GAMES</span>
+					</a>
+				</div>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/">Home</a></li>
+					<li><a href="/games">Games</a></li>
+					<li><a href="/contactus">Contact</a></li>
+					<li><a href="/aboutus">About</a></li>
+					<li><a href="/login"><span
+							class="glyphicon glyphicon-user"></span> Login</a></li>
+					<li><a href="/checkout"><span
+							class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-<div class="jumbotron jumbotron-sm">
+	<div class="jumbotron jumbotron-sm">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-lg-12">
-					<h2 class="blue">Edit Game</h2>
+					<h2 class="blue">View Users</h2>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="container">
-	
+
 		<div class="table-responsive-sm">
 			<table class="table table-sm table-striped">
 				<thead class="thead-light">
@@ -87,7 +94,8 @@
 						<td><span th:text="${user.lastname}"> User </span></td>
 						<td><span th:text="${user.email}"> User </span></td>
 						<td><span th:text="${user.address}"> User </span></td>
-						<td class="col text-center"><span th:text="${user.phone}"> User </span></td>
+						<td class="col text-center"><span th:text="${user.phone}">
+								User </span></td>
 
 
 						<td>
@@ -109,8 +117,9 @@
 
 		<div class="col-md-2">
 			<form action="adminHomepage.html" method="get">
-				<button type="submit" class=" btn btn-primary" style="color:#fff;background-color:#204a86ba;">
-					Admin Home</button>
+				<button type="submit" class=" btn btn-primary"
+					style="color: #fff; background-color: #204a86ba;">Admin
+					Home</button>
 			</form>
 		</div>
 
