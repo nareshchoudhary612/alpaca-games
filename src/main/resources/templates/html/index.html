@@ -56,13 +56,26 @@
 						<img th:src="${game.imageUrl}" class="card_image"
 							style="width: 100%" alt="Image">
 					</div>
-					<div class="panel-footer">
+					
 						<form th:action="'game/' + ${game.gameId}" method="get">
-							<button type="submit" class="card_button btn pull-right">BuyNow</button>
+							<div class="panel-footer">
+								<button type="submit" class="card_button btn pull-right">BuyNow</button>
+							</div>
 						</form>
-					</div>
+					
 				</div>
+				<br>				
 			</div>
+			
+		</div>
+		<div>
+			<div class="col-sm-2" ></div>
+			<div class="col-sm-2" ></div>
+			<div class="col-sm-1" ></div>
+			<div class="col-sm-2" >
+				<button class="moregames_button" style="vertical-align:middle;" onclick="location.href='/games'"><span>View More</span></button>
+			</div>
+			<div class="col-sm-4" ></div>
 		</div>
 		
 		<br>
