@@ -4,7 +4,7 @@
 <title>Admin Home Page</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../css/main.css">
+
 <link rel="stylesheet" href="../css/footer.css">
 <link rel="shortcut icon" type="../images/icon.png"
 	href="../images/icon.png" />
@@ -16,10 +16,11 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
+<link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body id="adminHomepage">
+
 
 	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse "
 		style="position: sticky;">
@@ -51,8 +52,7 @@
 			</div>
 		</div>
 	</nav>
-
-
+	<div class="page-content">
 	<div class="jumbotron jumbotron-sm">
 		<div class="container">
 			<div class="row">
@@ -64,19 +64,26 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-8">			
-			<div class="panel panel-default">
-				<div class="panel-heading">Admin Panel</div>
-				<div class="panel-body">
-					<a href="admin/games" class="btn btn-primary"> View All Games</a> 
-					<a href="admin/users" class="btn btn-primary"> View All Users</a> 
-					<a href="admin/orders" class="btn btn-primary"> View All Orders</a>
+			<div class="col-sm-5">
+				<div class="panel panel-default">
+					<div class="panel-heading">Admin Panel</div>
+					<div class="panel-body">
+						<div class="btn-group btn-group-md btn-group-vertical">
+							<br> <a href="admin/games" class="btn btn-primary"
+								style="margin-bottom: 20px;"> View All Games</a> <a
+								href="admin/users" class="btn btn-primary"
+								style="margin-bottom: 20px;"> View All Users</a> <a
+								href="admin/orders" class="btn btn-primary"
+								style="margin-bottom: 20px;"> View All Orders</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
+
 	</div>
 </div>
-
+	<br>
 	<br>
 	<br>
 

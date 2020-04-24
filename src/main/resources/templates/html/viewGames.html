@@ -4,7 +4,7 @@
 <title>View Games</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../css/main.css">
+
 <link rel="stylesheet" href="../css/footer.css">
 <link rel="shortcut icon" type="../images/icon.png"
 	href="../images/icon.png" />
@@ -16,7 +16,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
+<link rel="stylesheet" href="../css/main.css">
 </head>
 
 <body id="adminHomepage">
@@ -51,12 +51,12 @@
 			</div>
 		</div>
 	</nav>
-
+<div class="page-content">
 	<div class="jumbotron jumbotron-sm">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-lg-12">
-					<h2 class="blue">Edit Game</h2>
+					<h2 class="blue">View Games</h2>
 				</div>
 			</div>
 		</div>
@@ -107,7 +107,7 @@
 						<td>
 							<form th:action="'game/edit/' + ${game.gameId}" method="get">
 								<button type="submit"
-									class="card_button btn-primary btn pull-right">Edit</button>
+									class="btn-primary btn pull-right">Edit</button>
 							</form>
 						</td>
 						<td>
@@ -131,53 +131,23 @@
 				<div class="col-md-4"></div>
 				<div class="col-md-2">
 					<form action="game/new" method="get">
-						<button type="submit" class=" viewGamesButton1 btn btn-primary "
+						<button type="submit" class=" btn btn-primary"
 							style="color: #fff; background-color: #204a86ba;">Add
 							New Game</button>
 					</form>
 				</div>
 				<div class="col-md-2">
 					<form action="adminHomepage.html" method="get">
-						<button type="submit" class=" viewGamesButton1 btn btn-primary "
+						<button type="submit" class="btn btn-primary"
 							style="color: #fff; background-color: #204a86ba;">Admin
 							Home</button>
 					</form>
 				</div>
-
-
-
-
-
-			</div>
-
-		</div>
-
-
-
-
-		<!-- 		<div th:each="game : ${games}">
-
-			<div class="row">
-				<div>
-					<span th:text="${game.name}"></span>
-				</div>
-				<div>
-					<span th:text="${game.imageUrl}"></span>
-				</div>
-
-				<form th:action="'game/' + ${game.gameId}" method="put">
-					<button type="submit" class="card_button btn pull-right">Edit
-						Game</button>
-				</form>
-				<form th:action="'game/' + ${game.gameId}" method="put">
-					<button type="submit" class="card_button btn pull-right">Delete
-						Game</button>
-				</form>
 			</div>
 		</div>
+</div>
+</div>
 
- -->
-	</div>
 
 	<br>
 	<br>
