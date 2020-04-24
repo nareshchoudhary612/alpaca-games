@@ -15,6 +15,8 @@ footer
   font: normal 16px sans-serif;
   padding: 45px 50px;
   clear: both;
+  font-family: Roboto;
+  
 }
 
 .footer-distributed .footer-left p {
