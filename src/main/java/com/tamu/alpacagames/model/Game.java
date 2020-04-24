@@ -15,7 +15,7 @@ public class Game {
 	@SequenceGenerator(name = "GamesSeq", sequenceName = "Games_SEQ")
 	Long gameId;
 	String name;
-	String creator;
+	String creater;
 	String genre;
 	String description;
 	String imageUrl;
@@ -46,11 +46,11 @@ public class Game {
 	}
 
 	public String getCreater() {
-		return creator;
+		return creater;
 	}
 
 	public void setCreater(String creator) {
-		this.creator = creator;
+		this.creater = creator;
 	}
 
 	public String getGenre() {
