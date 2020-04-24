@@ -1,6 +1,7 @@
 package com.tamu.alpacagames.controller.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.tamu.alpacagames.controller.UserController;
 import com.tamu.alpacagames.model.Game;
 import com.tamu.alpacagames.model.Users;
+import com.tamu.alpacagames.repository.GameRepository;
 import com.tamu.alpacagames.service.GameService;
 import com.tamu.alpacagames.service.UserService;
 
@@ -27,8 +29,11 @@ public class AdminControllerImpl {
 
 	@Autowired
 	GameService gameService;
+	
+	@Autowired
+	GameRepository gameRepository;
 
-	@GetMapping(value= {"/","adminHomepage.html"}) 
+	@GetMapping(value= {"","adminHomepage.html"}) 
 	public String getAdminHomePage() {
 		return "html/adminHomepage.html";
 	}
@@ -39,7 +44,8 @@ public class AdminControllerImpl {
 
 	@GetMapping("/games")
 	public ModelAndView getAllGames(Model model) {
-		model.addAttribute("games", gameService.getGames());
+		//model.addAttribute("games", gameService.getGames());
+		model.addAttribute("games", gameRepository.findAll(Sort.by(Sort.Direction.ASC, "gameId")));
 		return new ModelAndView("html/viewGames.html");
 	}
 
