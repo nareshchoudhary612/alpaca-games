@@ -6,53 +6,67 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/main.css">
 <link rel="stylesheet" href="../css/footer.css">
-<link rel="shortcut icon" type="../images/icon.png" 	href="../images/icon.png" />
-<link rel="stylesheet" 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="shortcut icon" type="../images/icon.png"
+	href="../images/icon.png" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 </head>
 
 <body id="adminHomepage">
 
-	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse " style="position:sticky;" >
-		  <div class="container-fluid">
-		    <div class="navbar-header">
-		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>                        
-		      </button>
-		      <div class="title" style="    position: absolute;">
-				<a href="/">
-  				<img src="../images/icon.png" width="80px" height="80px" style="vertical-align: text-bottom;" >
-				<span style="position: fixed;font-size: xx-large;">aLPACA GAMES</span>
-				</a>
-  			  </div>
-		    </div>
-		    <div class="collapse navbar-collapse" id="myNavbar">
-		      <ul class="nav navbar-nav navbar-right">
-		        <li><a href="/">Home</a></li>
-				<li><a href="/games">Games</a></li>
-				<li><a href="/contactus">Contact</a></li>
-				<li><a href="/aboutus">About</a></li>
-				<li><a href="/login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
-				<li><a href="/checkout"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-		      </ul>
-		    </div>
-		  </div>
-		</nav>
+	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse "
+		style="position: sticky;">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<div class="title" style="position: absolute;">
+					<a href="/"> <img src="../images/icon.png" width="80px"
+						height="80px" style="vertical-align: text-bottom;"> <span
+						style="position: fixed; font-size: xx-large;">aLPACA GAMES</span>
+					</a>
+				</div>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/">Home</a></li>
+					<li><a href="/games">Games</a></li>
+					<li><a href="/contactus">Contact</a></li>
+					<li><a href="/aboutus">About</a></li>
+					<li><a href="/login"><span
+							class="glyphicon glyphicon-user"></span> Login</a></li>
+					<li><a href="/checkout"><span
+							class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
-
+	<div class="jumbotron jumbotron-sm">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-lg-12">
+					<h2 class="blue">Edit Game</h2>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div class="container">
-		<div class="page-header">
-			<h1>Games</h1>
-		</div>
+
 		<div class="table-responsive-sm">
 			<table class="table table-sm table-striped">
-						<thead class="thead-light">
+				<thead class="thead-light">
 					<tr>
 						<th class="col text-center">Game ID</th>
 						<th class="col text-center">Game</th>
@@ -72,7 +86,8 @@
 				</thead>
 				<tbody>
 					<tr th:each="game : ${games}">
-						<td class="col text-center"><span th:text="${game.gameId}"> Game Id </span></td>
+						<td class="col text-center"><span th:text="${game.gameId}">
+								Game Id </span></td>
 						<td><span th:text="${game.name}"> Game </span></td>
 						<td><span th:text="${game.creater}"> Game </span></td>
 						<td><span th:text="${game.genre}"> Game </span></td>
@@ -80,7 +95,8 @@
 						<td><span th:text="${game.imageUrl1}"> Game </span></td>
 
 						<td><span th:text="${game.platformType}"> Game </span></td>
-						<td class="col text-center"><span th:text="${game.ageCategory}"> Game </span></td>
+						<td class="col text-center"><span
+							th:text="${game.ageCategory}"> Game </span></td>
 
 						<td><span th:text="'$'+${game.price}"> Game </span></td>
 						<td><span th:text="'$'+${game.discount}">D Price </span></td>
@@ -90,12 +106,13 @@
 
 						<td>
 							<form th:action="'game/edit/' + ${game.gameId}" method="get">
-							<button type="submit" class="card_button btn-primary btn pull-right">Edit</button>
+								<button type="submit"
+									class="card_button btn-primary btn pull-right">Edit</button>
 							</form>
 						</td>
 						<td>
 							<form th:action="'game/delete/' + ${game.gameId}" method="post">
-							<button type="submit" class="card_button btn pull-right" >Delete</button>
+								<button type="submit" class="card_button btn pull-right">Delete</button>
 							</form>
 						</td>
 					</tr>
@@ -114,13 +131,16 @@
 				<div class="col-md-4"></div>
 				<div class="col-md-2">
 					<form action="game/new" method="get">
-						<button type="submit" class=" viewGamesButton1 btn btn-primary " style="color:#fff;background-color:#204a86ba;">Add
+						<button type="submit" class=" viewGamesButton1 btn btn-primary "
+							style="color: #fff; background-color: #204a86ba;">Add
 							New Game</button>
 					</form>
 				</div>
 				<div class="col-md-2">
 					<form action="adminHomepage.html" method="get">
-						<button type="submit" class=" viewGamesButton1 btn btn-primary " style="color:#fff;background-color:#204a86ba;">Admin Home</button>
+						<button type="submit" class=" viewGamesButton1 btn btn-primary "
+							style="color: #fff; background-color: #204a86ba;">Admin
+							Home</button>
 					</form>
 				</div>
 
