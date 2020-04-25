@@ -50,6 +50,14 @@
         });
     
     });
+    
+function confirmPass() {
+    var pass = document.getElementById("reg-password").value
+    var confPass = document.getElementById("reg-confirm-password").value
+    if(pass != confPass) {
+        alert('Password and Confirm password do not match');
+    }
+}
     </script>
 </head>
 
@@ -117,11 +125,11 @@
 									method="post" role="form" style="display: block;">
 									<div class="form-group">
 										<input type="text" name="username" id="username" tabindex="1"
-											class="form-control" placeholder="Username" value="">
+											class="form-control" placeholder="Username" value="" required>
 									</div>
 									<div class="form-group">
 										<input type="password" name="password" id="password"
-											tabindex="2" class="form-control" placeholder="Password">
+											tabindex="2" class="form-control" placeholder="Password" required>
 									</div>
 									<div class="form-group text-center">
 										<input type="checkbox" tabindex="3" class="" name="remember"
@@ -155,32 +163,32 @@
 									<div class="form-group">
 										<input th:field="*{username}" type="text" name="username"
 											id="username" tabindex="1" class="form-control"
-											placeholder="Username" value="">
+											placeholder="Username" value="" required>
 									</div>
 									<div class="form-group">
 										<input th:field="*{email}" type="email" name="email"
 											id="email" tabindex="1" class="form-control"
-											placeholder="Email Address" value="">
+											placeholder="Email Address" value="" required>
 									</div>
 									<div class="form-group">
 										<input th:field="*{password}" type="password" name="password"
-											id="password" tabindex="2" class="form-control"
-											placeholder="Password">
+											id="reg-password" tabindex="2" class="form-control"
+											placeholder="Password" required>
 									</div>
 									<div class="form-group">
 										<input type="password" name="confirm-password"
-											id="confirm-password" tabindex="2" class="form-control"
-											placeholder="Confirm Password">
+											id="reg-confirm-password" tabindex="2" class="form-control"
+											placeholder="Confirm Password" required onblur="confirmPass()" >
 									</div>
 									<div class="form-group">
 										<input th:field="*{address}" type="text" name="address"
 											id="address" tabindex="1" class="form-control"
-											placeholder="Address" value="">
+											placeholder="Address" value="" required>
 									</div>
 									<div class="form-group">
-										<input th:field="*{phone}" type="text" name="phone" id="phone"
-											tabindex="1" class="form-control" placeholder="Phone Number"
-											value="">
+										<input th:field="*{phone}" type="tel" pattern="^\d{10}$" name="phone" id="phone"
+											tabindex="1" class="form-control" placeholder="XXXXXXXXXX"
+											value="" required>
 									</div>
 
 									<div class="form-group">
@@ -198,11 +206,11 @@
 									method="post" role="form" style="display: none;">
 									<div class="form-group">
 										<input type="text" name="username" id="username" tabindex="1"
-											class="form-control" placeholder="Admin Username" value="">
+											class="form-control" placeholder="Admin Username" value="" required>
 									</div>
 									<div class="form-group">
 										<input type="password" name="password" id="password"
-											tabindex="2" class="form-control" placeholder="Admin Password">
+											tabindex="2" class="form-control" placeholder="Admin Password" required>
 									</div>
 									
 									<div class="form-group">
@@ -211,7 +219,7 @@
 												<input type="submit" name="login-submit" id="login-submit"
 													tabindex="4" class="form-control btn btn-login"
 													value="Log In"
-													style="color: #fff; background-color: #204a86ba;">
+													style="color: #fff; background-color: #204a86ba;" >
 											</div>
 										</div>
 									</div>

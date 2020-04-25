@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
-<title>View Games</title>
+<title>View Orders</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" href="../css/footer.css">
+
 <link rel="shortcut icon" type="../images/icon.png"
 	href="../images/icon.png" />
 <link rel="stylesheet"
@@ -18,9 +19,13 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="../css/main.css">
 <link rel="stylesheet" href="../css/admin.css">
+
+<script>
+
+</script>
 </head>
 
-<body id="adminHomepage">
+<body id="adminViewOrders">
 
 	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse "
 		style="position: sticky;">
@@ -32,7 +37,7 @@
 						class="icon-bar"></span>
 				</button>
 				<div class="title" style="position: absolute;">
-					<a href="/"> <img src="../images/icon.png" width="80px"
+					<a href="/"> <img src="../../../images/icon.png" width="80px"
 						height="80px" style="vertical-align: text-bottom;"> <span
 						style="position: fixed; font-size: xx-large;">aLPACA GAMES</span>
 					</a>
@@ -57,99 +62,74 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-lg-12">
-					<h2 class="blue">View Games</h2>
+					<h2 class="blue">View All Orders</h2>
 				</div>
 			</div>
 		</div>
 	</div>
-
 	<div class="container">
-	<div class= "viewGamesTable">
+		<div class="viewOrdersTable">
 		<div class="table-responsive-sm">
 			<table class="table table-sm table-striped">
 				<thead class="thead-light">
 					<tr>
+						<th class="col text-center ">Order ID</th>
+						<th class="col text-center">User ID</th>
 						<th class="col text-center">Game ID</th>
-						<th class="col text-center">Game</th>
-						<th class="col text-center">Creator</th>
-						<th class="col text-center">Genre</th>
-						<th class="col text-center">Image URL</th>
-						<th class="col text-center">Image URL1</th>
-						<th class="col text-center">Platform</th>
-						<th class="col text-center">Age Category</th>
-						<th class="col text-center">Price</th>
-						<th class="col text-center">Sale Price</th>
-						<th class="col text-center">Home Flag</th>
-						<th class="col text-center">Edit</th>
-						<th class="col text-center">Delete</th>
+						<th class="col text-center">Bill Amount</th>
+						<th class="col text-center">Delivery Status</th>
+						<th class="col text-center">Order Date</th>
+	
 
 					</tr>
 				</thead>
 				<tbody>
-					<tr th:each="game : ${games}">
-						<td class="col text-center"><span th:text="${game.gameId}">
-								Game Id </span></td>
-						<td class="col text-center"><span th:text="${game.name}"> Game </span></td>
-						<td class="col text-center"><span th:text="${game.creater}"> Game </span></td>
-						<td class="col text-center"><span th:text="${game.genre}"> Game </span></td>
-						<td class="col text-center"><span th:text="${game.imageUrl}"> Game </span></td>
-						<td class="col text-center"><span th:text="${game.imageUrl1}"> Game </span></td>
-
-						<td class="col text-center"><span th:text="${game.platformType}"> Game </span></td>
-						<td class="col text-center"><span
-							th:text="${game.ageCategory}"> Game </span></td>
-
-						<td class="col text-center"><span th:text="'$'+${game.price}"> Game </span></td>
-						<td class="col text-center"><span th:text="'$'+${game.discount}">D Price </span></td>
-						<td class="col text-center"><span th:text="${game.homepageFlag}"> Game </span></td>
+					<!-- <tr th:if="${games.empty}">
+						<td colspan="2">No Game Available</td>
+					</tr>
+					 -->
+					<tr th:each="order : ${orders}">
+						<!-- <td class="col text-center"><span th:text="${order.orderId}">
+								Order ID </span></td> -->
+						<td class="col text-center "><span th:text="${order.orderId}">Order ID</span></td>
+						<td class="col text-center"><span th:text="${order.userId}">User ID</span></td>
+						<td class="col text-center"><span th:text="${order.gameId}">Game ID</span></td>
+						<td class="col text-center"><span th:text="${order.billAmount}">Bill Amount</span></td>
+						<td class="col text-center"><span th:text="${order.deliveryStatus}">Delivery Status</span></td>
+						<td class="col text-center"><span th:text="${order.date}">Order Date</span></td>
+						
 
 
-
-						<td>
-							<form th:action="'game/edit/' + ${game.gameId}" method="get">
-								<button id="viewGameEditButton" type="submit"
-									class="btn-primary btn pull-right">Edit</button>
+				<!-- 		<td>
+							<form th:action="'user/delete/' + ${user.userId}" method="post">
+								<button type="submit" class="card_button btn pull-right">View Order</button>
 							</form>
-						</td>
-						<td>
-							<form th:action="'game/delete/' + ${game.gameId}" method="post">
-								<button id ="viewGameDeleteButton" type="submit" class="card_button btn pull-right">Delete</button>
-							</form>
-						</td>
+						</td>  -->
 					</tr>
 					<br>
-
+					<br>
 				</tbody>
 
 			</table>
 
-	</div>
 
+</div>
 		</div>
 		<br>
-		<div class="col text-center">
-			<div class="row">
-				<div class="col-md-4"></div>
-				<div class="col-md-2">
-					<form action="game/new" method="get">
-						<button type="submit" class=" btn btn-primary"
-							style="color: #fff; background-color: #204a86ba;">Add
-							New Game</button>
-					</form>
-				</div>
-				<div class="col-md-2">
-					<form action="adminHomepage.html" method="get">
-						<button type="submit" class="btn btn-primary"
-							style="color: #fff; background-color: #204a86ba;">Admin
-							Home</button>
-					</form>
-				</div>
-			</div>
+
+		<div class="col-md-2">
+			<form action="adminHomepage.html" method="get">
+				<button type="submit" class=" btn btn-primary"
+					style="color: #fff; background-color: #204a86ba;">Admin
+					Home</button>
+			</form>
 		</div>
-</div>
-</div>
 
 
+
+
+	</div>
+</div>
 	<br>
 	<br>
 	<footer class="footer-distributed">
