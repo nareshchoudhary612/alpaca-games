@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 
 <head>
 	<title>Alpaca Games</title>
@@ -132,45 +132,30 @@
 	</div>
 	<br>
 	<div class="row">
-		<div class="col-sm-3">
-			<div class="panel panel-primary">
-				<div class="panel-heading">Call of Duty</div>
-				<div class="panel-body"><img src="../images/COD_card.jpg" class="card_image" style="width:100%"
-						alt="Image"></div>
-				<div class="panel-footer"><button type="button" class="card_button btn pull-right">Buy Now</button>
+		<div>
+			<div class="col-sm-3" th:each="game : ${games}">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<span th:text="${game.name}"></span>
+					</div>
+					<div class="panel-body">
+						<img th:src="${game.imageUrl}" class="card_image"
+							style="width: 100%" alt="Image">
+					</div>
+					
+						<form th:action="'game/' + ${game.gameId}" method="get">
+							<div class="panel-footer" style="overflow: auto;">
+								<button type="submit" class="card_button btn pull-right">BuyNow</button>
+							</div>
+						</form>
+					
 				</div>
+				<br>				
 			</div>
-		</div>
-		<div class="col-sm-3">
-			<div class="panel panel-primary">
-				<div class="panel-heading">Spider Man</div>
-				<div class="panel-body"><img src="../images/SP_card.jpg" class="card_image" style="width:100%"
-						alt="Image"></div>
-				<div class="panel-footer"><button type="button" class="card_button btn pull-right">Buy Now</button>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-3">
-			<div class="panel panel-primary">
-				<div class="panel-heading">Fifa 2020</div>
-				<div class="panel-body"><img src="../images/FF_card.jpg" class="card_image" style="width:100%"
-						alt="Image"></div>
-				<div class="panel-footer"><button type="button" class="card_button btn pull-right">Buy Now</button>
-				</div>
-			</div>
-		</div>
-		<div class="col-sm-3">
-			<div class="panel panel-primary">
-				<div class="panel-heading">Uncharted</div>
-				<div class="panel-body"><img src="../images/UN_card.jpg" class="card_image" style="width:100%"
-						alt="Image"></div>
-				<div class="panel-footer"><button type="button" class="card_button btn pull-right">Buy Now</button>
-				</div>
-			</div>
+			
 		</div>
 	</div>
 
-	</div>
 
 	<div id="filter-box">
 

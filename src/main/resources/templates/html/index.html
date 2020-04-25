@@ -12,7 +12,12 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="../css/main.css">
 		<style>
-			ul {
+		ul{
+		list-style-type: none;
+		margin: 0;
+			  padding: 0;
+		}
+			/* ul {
 			  list-style-type: none;
 			  margin: 0;
 			  padding: 0;
@@ -22,7 +27,7 @@
 			
 			li {
 			  float: left;
-			}
+			} */
 			
 			li a, .dropbtn1 {
 			  display: inline-block;
@@ -94,12 +99,15 @@
 				<li><a href="/games">Games</a></li>
 				<li><a href="/contactus">Contact</a></li>
 				<li><a href="/aboutus">About</a></li>
-				<li><a href="/login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+				<li><a href="/login">Login</a></li>
 				<li class="dropdown1">
-			    	<a href="javascript:void(0)" class="dropbtn1"><span th:text="${user.firstname}"></span></a>
+			    	<a href="javascript:void(0)" class="dropbtn1">
+			    		<span class="glyphicon glyphicon-user"></span>
+			    		<span th:text="${user.firstname}"></span>
+			    	</a>
 	    			<ul class="dropdown1-content">
-		    			<li><a class="dropdown1-content-a" href="/orderhistory/1">Order History</a></li>
-		      			<li><a class="dropdown1-content-a" href="#"><span class="glyphicon">&#xe163;</span>Logout</a></li>
+		    			<li><a class="dropdown1-content-a" href="/orderhistory/1">Orders</a></li>
+		      			<li><a class="dropdown1-content-a" href="#"><span style="color: red; font-weight: bold;" class="glyphicon glyphicon-off"></span> Logout</a></li>
 		    		</ul>
 			    </li>
 				<li><a href="/checkout"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
