@@ -18,10 +18,10 @@ public class UserControllerImpl implements UserController {
 
 	@Autowired
 	UserService userService;
-	
+
 	@Autowired
 	GameService gameService;
-	
+
 	@Override
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView showLogin() {
@@ -29,21 +29,23 @@ public class UserControllerImpl implements UserController {
 		mav.addObject("user", new Users());
 		return mav;
 	}
-	
+
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public ModelAndView homePage(Model model) {
 		model.addAttribute("games", gameService.getHomepageGames());
 		//List<Game> homepageGames = gameService.getHomepageGames();
 		return new ModelAndView("html/home");
 	}
-	
+
 	@Override
 	@RequestMapping(value = "/loginProcess", method = RequestMethod.POST)
-	public ModelAndView loginProcess(@ModelAttribute("user") Users user) {
+	public ModelAndView loginProcess(@ModelAttribute("user") Users user, Model model) {
 		ModelAndView mav = null;
 		boolean loginFlag = userService.validateUser(user);
 		if (loginFlag) {
+			model.addAttribute("user",user);
 			mav = new ModelAndView("redirect:index.html");
+
 			//mav.addObject("username", user.getUsername());
 		} else {
 			mav = new ModelAndView("html/login");
@@ -51,5 +53,4 @@ public class UserControllerImpl implements UserController {
 		}
 		return mav;
 	}
-
 }

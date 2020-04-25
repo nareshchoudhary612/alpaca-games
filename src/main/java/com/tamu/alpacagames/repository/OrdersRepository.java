@@ -9,8 +9,5 @@ import com.tamu.alpacagames.model.Orders;
 
 @Repository
 public interface OrdersRepository extends JpaRepository<Orders , Long>{
-    
-   // List<Orders> GetOrdersByuserId(int userid);
-
-    List<Orders> findByUserId(String userid);
+   List<Orders> findByUserId(String userid);
 }

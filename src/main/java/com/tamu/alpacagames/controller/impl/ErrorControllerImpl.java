@@ -18,7 +18,4 @@ public class ErrorControllerImpl implements ErrorController{
 	public String getErrorPath() {
 		return PATH;
 	}
-
-
-
 }

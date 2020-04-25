@@ -25,11 +25,10 @@ public class AddToCartControllerImpl{
 		model.addAttribute("game",gameService.getGameById(cart.getGameId()).get());
 		return new ModelAndView("html/cart");
 	}
-	
+
 	@RequestMapping(value = "/checkout", method = RequestMethod.GET)
 	public ModelAndView showCart(@ModelAttribute("cart") OrderLine cart, Model model) {
 		model.addAttribute("game",gameService.getGameById((long) 1).get());
 		return new ModelAndView("html/cart");
 	}
-
 }
