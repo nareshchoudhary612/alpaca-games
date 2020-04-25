@@ -23,6 +23,8 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public boolean validateUser(Users user) {
+		System.out.println("user tring to login--->"+user.getUsername());
+		System.out.println("user check---->"+userRepository.findByUsername(user.getUsername()));
 		Optional<Users> fetchedUser = userRepository.findByUsername(user.getUsername());
 		//return (fetchedUser.isPresent() && fetchedUser.get().getPassword().equals(user.getPassword()))?true:false;
 		return (fetchedUser.isPresent() && fetchedUser.get().getPassword().equals(user.getPassword()))?true:false;
