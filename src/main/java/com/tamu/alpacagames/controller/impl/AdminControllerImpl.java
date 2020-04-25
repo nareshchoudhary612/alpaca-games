@@ -9,12 +9,15 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.tamu.alpacagames.model.Game;
+import com.tamu.alpacagames.model.Users;
 import com.tamu.alpacagames.repository.GameRepository;
 import com.tamu.alpacagames.service.GameService;
 import com.tamu.alpacagames.service.UserService;
+import com.tamu.alpacagames.service.impl.OrderHistoryImpl;
 
 @Controller
 @RequestMapping("/admin")
@@ -28,6 +31,25 @@ public class AdminControllerImpl {
 
 	@Autowired
 	GameRepository gameRepository;
+	
+	@Autowired
+	OrderHistoryImpl orderService;
+	
+	@RequestMapping(value = "/loginProcess", method = RequestMethod.POST)
+	public ModelAndView loginProcess(@ModelAttribute("user") Users user, Model model) {
+		ModelAndView mav = null;
+		//boolean loginFlag = userService.validateUser(user);
+		if (user.getUsername().contentEquals("admin") && user.getPassword().equals("admin")) {
+			model.addAttribute("user",user);
+			mav = new ModelAndView("redirect:adminHomepage.html");
+
+			//mav.addObject("username", user.getUsername());
+		} else {
+			mav = new ModelAndView("html/login");
+			mav.addObject("message", "Username or Password is wrong!!");
+		}
+		return mav;
+	}
 
 	@GetMapping(value= {"","adminHomepage.html"}) 
 	public String getAdminHomePage() {
@@ -115,4 +137,9 @@ public class AdminControllerImpl {
 	/*************************************************************
 	 * 					Orders CRUD /
 	 *************************************************************/
+	@GetMapping("/orders")
+	public ModelAndView getAllOrders(Model model) {
+		model.addAttribute("orders", orderService.getOrders());
+		return new ModelAndView("html/viewOrders.html");
+	}
 }

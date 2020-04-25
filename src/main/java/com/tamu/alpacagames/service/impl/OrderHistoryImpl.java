@@ -21,5 +21,12 @@ public class OrderHistoryImpl implements OrderService {
       orderRepository.findByUserId(userId) ;
       return orderRepository.findByUserId(userId);
     }
+    
+    @Override
+	public List<Orders> getOrders() {
+		
+    	List<Orders> orderList = orderRepository.findAll();
+		return orderList;
+	}
 
 }
