@@ -72,19 +72,19 @@ s<div class="page-content">
 					<form th:object="${game}" method="post" role="form">
 
 						<div class="form-group col-sm-6">
-							<label for="Name">Name</label>
+							<label for="Name">Name*</label>
 						</div>
 						<div class="form-group col-sm-6">
 							<input type="text" id="name" placeholder="Enter Name"
-								th:field="*{name}" wrap="soft" />
+								th:field="*{name}" wrap="soft" required />
 						</div>
 
 						<div class="form-group col-sm-6">
-							<label for="Creator">Creator</label>
+							<label for="Creator">Creator*</label>
 						</div>
 						<div class="form-group col-sm-6">
 							<input type="text" placeholder="Enter Creator"
-								th:field="*{creater}" />
+								th:field="*{creater}" required/>
 						</div>
 						<div class="form-group col-sm-6">
 							<label for="Genre">Genre</label>
@@ -100,18 +100,18 @@ s<div class="page-content">
 								th:field="*{description}" />
 						</div>
 						<div class="form-group col-sm-6">
-							<label for="imageUrl">Image Url</label>
+							<label for="imageUrl">Image Url*</label>
 						</div>
 						<div class="form-group col-sm-6">
 							<input type="text" placeholder="Enter Image URL"
-								th:field="*{imageUrl}" />
+								th:field="*{imageUrl}" required/>
 						</div>
 						<div class="form-group col-sm-6">
-							<label for=imageUrl1>Product Detail Image URL1</label>
+							<label for=imageUrl1>Product Detail Image URL1*</label>
 						</div>
 						<div class="form-group col-sm-6">
 							<input type="text" placeholder="Enter Image URL1"
-								th:field="*{imageUrl1}" />
+								th:field="*{imageUrl1}" required/>
 						</div>
 						<div class="form-group col-sm-6">
 							<label for="imageUrl2">Product Detail Image URL2</</label>
@@ -135,7 +135,7 @@ s<div class="page-content">
 						</div>
 
 						<div class="form-group col-sm-6">
-							<label for="Age Category">Age Category</label>
+							<label for="Age Category">Age Category*</label>
 						</div>
 
 						<div class="form-group col-sm-6">
@@ -163,22 +163,22 @@ s<div class="page-content">
 						<div class="form-group col-sm-6"></div>
 
 						<div class="form-group col-sm-6">
-							<label for="Discount">Discount</label>
+							<label for="Discount">Discounted Price*</label>
 						</div>
 						<div class="form-group col-sm-6">
-							<input type="text" th:field="*{discount}"
-								placeholder="Enter Discount" />
-						</div>
-
-						<div class="form-group col-sm-6">
-							<label for="Price">Price</label>
-						</div>
-						<div class="form-group col-sm-6">
-							<input type="text" placeholder="Enter Price" th:field="*{price}" />
+							<input type='number' pattern='[0-9]+(\\.[0-9][0-9]?)?' th:field="*{discount}"
+								placeholder="Enter Discount" required/>
 						</div>
 
 						<div class="form-group col-sm-6">
-							<label for="HomePage Flag">HomePage Flag</label>
+							<label for="Price">Actual Price*</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<input type='number' pattern='[0-9]+(\\.[0-9][0-9]?)?' placeholder="Enter Price" th:field="*{price}" required/>
+						</div>
+
+						<div class="form-group col-sm-6">
+							<label for="HomePage Flag">Do you want to show the game on Homepage?</label>
 						</div>
 						<div class="form-group col-sm-6">
 							<select th:field="*{homepageFlag}">
@@ -203,6 +203,7 @@ s<div class="page-content">
 				</div>
 			</div>
 		</div>
+		<div> Note:Dummy values for Image URL : images/SP_card.jpg , images/SP_card_2.jpg</div>
 	</div>
 
 </div>
