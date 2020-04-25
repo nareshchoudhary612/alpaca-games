@@ -1,49 +1,58 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
-	<head>
-		<title>Alpaca Games</title>
-	   	<meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="../../../css/footer.css">
-		<link rel="shortcut icon" type="../images/icon.png" href="../../../images/icon.png"/>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="../../../css/main.css">
-	</head>
+<head>
+<title>Alpaca Games</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../../../css/footer.css">
+<link rel="shortcut icon" type="../images/icon.png"
+	href="../../../images/icon.png" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../../../css/main.css">
+
+</head>
 
 <body id="editgame">
 
-	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse " style="position:sticky;" >
-		  <div class="container-fluid">
-		    <div class="navbar-header">
-		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>                        
-		      </button>
-		      <div class="title" style="    position: absolute;">
-				<a href="/">
-  				<img src="../../../images/icon.png" width="80px" height="80px" style="vertical-align: text-bottom;" >
-				<span style="position: fixed;font-size: xx-large;">aLPACA GAMES</span>
-				</a>
-  			  </div>
-		    </div>
-		    <div class="collapse navbar-collapse" id="myNavbar">
-		      <ul class="nav navbar-nav navbar-right">
-		        <li><a href="/">Home</a></li>
-				<li><a href="/games">Games</a></li>
-				<li><a href="/contactus">Contact</a></li>
-				<li><a href="/aboutus">About</a></li>
-				<li><a href="/login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
-				<li><a href="/checkout"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-		      </ul>
-		    </div>
-		  </div>
-		</nav>
-	
-<div class="jumbotron jumbotron-sm">
+	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse "
+		style="position: sticky;">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<div class="title" style="position: absolute;">
+					<a href="/"> <img src="../../../images/icon.png" width="80px"
+						height="80px" style="vertical-align: text-bottom;"> <span
+						style="position: fixed; font-size: xx-large;">aLPACA GAMES</span>
+					</a>
+				</div>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/">Home</a></li>
+					<li><a href="/games">Games</a></li>
+					<li><a href="/contactus">Contact</a></li>
+					<li><a href="/aboutus">About</a></li>
+					<li><a href="/login"><span
+							class="glyphicon glyphicon-user"></span> Login</a></li>
+					<li><a href="/checkout"><span
+							class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+<div class="page-content">
+	<div class="jumbotron jumbotron-sm">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-lg-12">
@@ -52,149 +61,150 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-sm-2">
-	</div>
-		<div class="col-sm-8">
-			<div class="well well-sm">
-				<div class="row">
 
-					<div class="col-sm-12">
-						<form th:object="${game}" method="post" role="form">
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8"><
+	<div class="well well-sm">
+			<div class="row">
 
-							<div class="form-group col-sm-6">
-								<label for="Name">Name</label>
-							</div>
-							<div class="form-group col-sm-6">
-								<input type="text" id="name" placeholder="Enter Name" 
-									th:field="*{name}" wrap="soft" />
-							</div>
+				<div class="col-sm-10">
+					<form th:object="${game}" method="post" role="form">
 
-							<div class="form-group col-sm-6">
-								<label for="Creator">Creator</label>
-							</div>
-							<div class="form-group col-sm-6">
-								<input type="text" placeholder="Enter Creator"
-									th:field="*{creater}" />
-							</div>
-							<div class="form-group col-sm-6">
-								<label for="Genre">Genre</label>
-							</div>
-							<div class="form-group col-sm-6">
-								<input type="text" placeholder="Enter Genre" th:field="*{genre}" />
-							</div>
-							<div class="form-group col-sm-6">
-								<label for="Description">Description</label>
-							</div>
-							<div class="form-group col-sm-6">
-								<input type="text" placeholder="Enter Description"
-									th:field="*{description}" />
-							</div>
-							<div class="form-group col-sm-6">
-								<label for="imageUrl">Image Url</label>
-							</div>
-							<div class="form-group col-sm-6">
-								<input type="text" placeholder="Enter Image URL"
-									th:field="*{imageUrl}" />
-							</div>
-							<div class="form-group col-sm-6">
-								<label for=imageUrl1>Product Detail Image URL1</label>
-							</div>
-							<div class="form-group col-sm-6">
-								<input type="text" placeholder="Enter Image URL1"
-									th:field="*{imageUrl1}" />
-							</div>
-							<div class="form-group col-sm-6">
-								<label for="imageUrl2">Product Detail Image URL2</</label>
-							</div>
-							<div class="form-group col-sm-6">
-								<input type="text" placeholder="Enter Image URL2"
-									th:field="*{imageUrl2}" />
-							</div>
-							<div class="form-group col-sm-6">
-								<label for="Platform Type">Platform Type</label>
-							</div>
-							<div class="form-group col-sm-6">
-								<select th:field="*{platformType}">
-									<option value="XBox">XBox</option>
-									<option value="PS4">PS 4</option>
-									<option value="PS3">PS 3</option>
-								</select>
-							</div>
-							<div class="form-group col-sm-6">
-								<label for="Age Category"></label>
-							</div>
+						<div class="form-group col-sm-6">
+							<label for="Name">Name</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<input type="text" id="name" placeholder="Enter Name"
+								th:field="*{name}" />
+						</div>
 
-							<div class="form-group col-sm-6">
-								<label for="Age Category">Age Category</label>
-							</div>
+						<div class="form-group col-sm-6">
+							<label for="Creator">Creator</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<input type="text" placeholder="Enter Creator"
+								th:field="*{creater}" />
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="Genre">Genre</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<input type="text" placeholder="Enter Genre" th:field="*{genre}" />
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="Description">Description</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<input type="text" placeholder="Enter Description"
+								th:field="*{description}" />
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="imageUrl">Image Url</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<input type="text" placeholder="Enter Image URL"
+								th:field="*{imageUrl}" />
+						</div>
+						<div class="form-group col-sm-6">
+							<label for=imageUrl1>Product Detail Image URL1</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<input type="text" placeholder="Enter Image URL1"
+								th:field="*{imageUrl1}" />
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="imageUrl2">Product Detail Image URL2</</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<input type="text" placeholder="Enter Image URL2"
+								th:field="*{imageUrl2}" />
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="Platform Type">Platform Type</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<select th:field="*{platformType}">
+								<option value="XBox">XBox</option>
+								<option value="PS4">PS 4</option>
+								<option value="PS3">PS 3</option>
+							</select>
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="Age Category"></label>
+						</div>
 
-							<div class="form-group col-sm-6">
-								<select th:field="*{ageCategory}">
-									<option value="1">5-10</option>
-									<option value="2">10-20</option>
-									<option value="3">20+</option>
-								</select>
-							</div>
+						<div class="form-group col-sm-6">
+							<label for="Age Category">Age Category</label>
+						</div>
 
-
-							<div class="form-group col-sm-6">
-								<label for="Available"></label>
-							</div>
-							<div class="form-group col-sm-6">
-								<label for="Available">Available</label>
-							</div>
-							<div class="form-group col-sm-6">
-								<select th:field="*{available}">
-									<option value="true">Yes</option>
-									<option value="false">No</option>
-								</select>
-							</div>
-
-							<div class="form-group col-sm-6"></div>
-
-							<div class="form-group col-sm-6">
-								<label for="Discount">Discount</label>
-							</div>
-							<div class="form-group col-sm-6">
-								<input type="text" th:field="*{discount}"
-									placeholder="Enter Discount" />
-							</div>
-
-							<div class="form-group col-sm-6">
-								<label for="Price">Price</label>
-							</div>
-							<div class="form-group col-sm-6">
-								<input type="text" placeholder="Enter Price" th:field="*{price}" />
-							</div>
-
-							<div class="form-group col-sm-6">
-								<label for="HomePage Flag">HomePage Flag</label>
-							</div>
-							<div class="form-group col-sm-6">
-								<select th:field="*{homepageFlag}">
-									<option value="true">Yes</option>
-									<option value="false">No</option>
-								</select>
-							</div>
+						<div class="form-group col-sm-6">
+							<select th:field="*{ageCategory}">
+								<option value="1">5-10</option>
+								<option value="2">10-20</option>
+								<option value="3">20+</option>
+							</select>
+						</div>
 
 
-							<div class="form-group col-sm-12">
-								<div class="row">
-									<div class="col-sm-12 col-sm-offset-4">
-										<input type="submit" value="Submit" class="btn btn-primary" 
-											style="color: #fff; background-color: #204a86ba;" /> <input
-											type="reset" value="Reset" class="btn btn-primary"
-											style="color: #fff; background-color: #204a86ba;" />
-									</div>
+						<div class="form-group col-sm-6">
+							<label for="Available"></label>
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="Available">Available</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<select th:field="*{available}">
+								<option value="true">Yes</option>
+								<option value="false">No</option>
+							</select>
+						</div>
+
+						<div class="form-group col-sm-6"></div>
+
+						<div class="form-group col-sm-6">
+							<label for="Discount">Discount</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<input type="text" th:field="*{discount}"
+								placeholder="Enter Discount" />
+						</div>
+
+						<div class="form-group col-sm-6">
+							<label for="Price">Price</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<input type="text" placeholder="Enter Price" th:field="*{price}" />
+						</div>
+
+						<div class="form-group col-sm-6">
+							<label for="HomePage Flag">HomePage Flag</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<select th:field="*{homepageFlag}">
+								<option value="true">Yes</option>
+								<option value="false">No</option>
+							</select>
+						</div>
+
+
+						<div class="form-group col-sm-10">
+							<div class="row">
+								<div class="col-sm-10 col-sm-offset-6">
+									<input type="submit" value="Submit" class="btn btn-primary"
+										style="color: #fff; background-color: #204a86ba;" /> <input
+										type="reset" value="Reset" class="btn btn-primary"
+										style="color: #fff; background-color: #204a86ba;" />
 								</div>
 							</div>
+						</div>
 
-						</form>
-					</div>
+					</form>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
+
 
 
 

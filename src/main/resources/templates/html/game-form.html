@@ -1,155 +1,228 @@
-<!-- <!DOCTYPE HTML>
-<html xmlns:th="https://www.thymeleaf.org">
-<head>
-<title>New Game Form</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
- -->
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
-<title>Login Page</title>
+<title>Add New Game</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../css/main.css">
-<link rel="stylesheet" href="../css/login.css">
-<link rel="stylesheet" href="../css/footer.css">
+<link rel="stylesheet" href="../../../css/footer.css">
 <link rel="shortcut icon" type="../images/icon.png"
-	href="../images/icon.png" />
+	href="../../../images/icon.png" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
+<link rel="stylesheet" href="../../../css/main.css">
 </head>
 
-<body id="adminHomepage">
-	<div>
-		<div class="title">
-			<img src="../images/icon.png" width="80px" height="80px"
-				style="vertical-align: text-bottom;"> <span>aLPACA
-				GAMES</span>
-		</div>
-	</div>
-	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse " style="position:sticky;" >
-		  <div class="container-fluid">
-		    <div class="navbar-header">
-		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>                        
-		      </button>
-		      <div class="title" style="    position: absolute;">
-				<a href="/">
-  				<img src="../images/icon.png" width="80px" height="80px" style="vertical-align: text-bottom;" >
-				<span style="position: fixed;font-size: xx-large;">aLPACA GAMES</span>
-				</a>
-  			  </div>
-		    </div>
-		    <div class="collapse navbar-collapse" id="myNavbar">
-		      <ul class="nav navbar-nav navbar-right">
-		        <li><a href="/">Home</a></li>
-				<li><a href="/games">Games</a></li>
-				<li><a href="/contactus">Contact</a></li>
-				<li><a href="/aboutus">About</a></li>
-				<li><a href="/login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
-				<li><a href="/checkout"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-		      </ul>
-		    </div>
-		  </div>
-		</nav>
+<body id="newgame">
 
-	<h1>Form</h1>
-	<div class="row">
-		<div class="col-md-3"></div>
-		<div class="col-md-6">
-			<form action="new" th:object="${game}" method="post">
-				<p>
-					Game Name: <input type="text" th:field="*{name}" />
-				</p>
-				<p>
-					Creater: <input type="text" th:field="*{creater}" />
-				</p>
-				<p>
-					Genre: <input type="text" th:field="*{genre}" />
-				</p>
-				<p>
-					Description: <input type="text" th:field="*{description}" />
-				</p>
-				<p>
-					imageUrl: <input type="text" th:field="*{imageUrl}" />
-				</p>
-				<p>
-					imageUrl1: <input type="text" th:field="*{imageUrl1}" />
-				</p>
-				<p>
-					imageUrl2: <input type="text" th:field="*{imageUrl2}" />
-				</p>
-				<p>
-					<!--  Platform Type: <input type="text" th:field="*{platformType}" /> -->
-					Platform Type: <select th:field="*{platformType}">
-						<option value="XBox">XBox</option>
-						<option value="PS4">PS 4</option>
-						<option value="PS3">PS 3</option>
-					</select>
-				</p>
-				<p>
-					<!--  Age Category: <input type="text" th:field="*{ageCategory}" />-->
-					Age Category: <select th:field="*{ageCategory}">
-						<option value="1">5-10 Year</option>
-						<option value="2">10-20 Year</option>
-						<option value="3">20+ Year</option>
-					</select>
-				</p>
-				<p>
-					<!-- Available?: <input type="text" th:field="*{available}" />  -->
-					Available? <select th:field="*{available}">
-						<option value="true">Yes</option>
-						<option value="false">No</option>
-					</select>
-				</p>
-				<p>
-					Discount: <input type="text" th:field="*{discount}" />
-				</p>
-				<p>
-					Price: <input type="text" th:field="*{price}" />
-				</p>
-				<p>
-					HomePage Flag?: <select th:field="*{homepageFlag}">
-						<option value="true">Yes</option>
-						<option value="false">No</option>
-					</select>
-				</p>
-				<p>
-					<input type="submit" value="Submit" /> <input type="reset"
-						value="Reset" />
-				</p>
-			</form>
+	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse "
+		style="position: sticky;">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<div class="title" style="position: absolute;">
+					<a href="/"> <img src="../../../images/icon.png" width="80px"
+						height="80px" style="vertical-align: text-bottom;"> <span
+						style="position: fixed; font-size: xx-large;">aLPACA GAMES</span>
+					</a>
+				</div>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/">Home</a></li>
+					<li><a href="/games">Games</a></li>
+					<li><a href="/contactus">Contact</a></li>
+					<li><a href="/aboutus">About</a></li>
+					<li><a href="/login"><span
+							class="glyphicon glyphicon-user"></span> Login</a></li>
+					<li><a href="/checkout"><span
+							class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+				</ul>
+			</div>
 		</div>
-		<div class="col-md-3"></div>
+	</nav>
+
+
+s<div class="page-content">
+	<div class="jumbotron jumbotron-sm">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-lg-12">
+					<h2 class="blue">Add New Game</h2>
+				</div>
+			</div>
+		</div>
 	</div>
+
+	<div class="col-sm-2"></div>
+	<div class="col-sm-8">
+	<div class="well well-sm">
+			<div class="row">
+
+				<div class="col-sm-10">
+					<form th:object="${game}" method="post" role="form">
+
+						<div class="form-group col-sm-6">
+							<label for="Name">Name</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<input type="text" id="name" placeholder="Enter Name"
+								th:field="*{name}" wrap="soft" />
+						</div>
+
+						<div class="form-group col-sm-6">
+							<label for="Creator">Creator</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<input type="text" placeholder="Enter Creator"
+								th:field="*{creater}" />
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="Genre">Genre</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<input type="text" placeholder="Enter Genre" th:field="*{genre}" />
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="Description">Description</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<input type="text" placeholder="Enter Description"
+								th:field="*{description}" />
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="imageUrl">Image Url</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<input type="text" placeholder="Enter Image URL"
+								th:field="*{imageUrl}" />
+						</div>
+						<div class="form-group col-sm-6">
+							<label for=imageUrl1>Product Detail Image URL1</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<input type="text" placeholder="Enter Image URL1"
+								th:field="*{imageUrl1}" />
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="imageUrl2">Product Detail Image URL2</</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<input type="text" placeholder="Enter Image URL2"
+								th:field="*{imageUrl2}" />
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="Platform Type">Platform Type</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<select th:field="*{platformType}">
+								<option value="XBox">XBox</option>
+								<option value="PS4">PS 4</option>
+								<option value="PS3">PS 3</option>
+							</select>
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="Age Category"></label>
+						</div>
+
+						<div class="form-group col-sm-6">
+							<label for="Age Category">Age Category</label>
+						</div>
+
+						<div class="form-group col-sm-6">
+							<select th:field="*{ageCategory}">
+								<option value="1">5-10</option>
+								<option value="2">10-20</option>
+								<option value="3">20+</option>
+							</select>
+						</div>
+
+
+						<div class="form-group col-sm-6">
+							<label for="Available"></label>
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="Available">Available</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<select th:field="*{available}">
+								<option value="true">Yes</option>
+								<option value="false">No</option>
+							</select>
+						</div>
+
+						<div class="form-group col-sm-6"></div>
+
+						<div class="form-group col-sm-6">
+							<label for="Discount">Discount</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<input type="text" th:field="*{discount}"
+								placeholder="Enter Discount" />
+						</div>
+
+						<div class="form-group col-sm-6">
+							<label for="Price">Price</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<input type="text" placeholder="Enter Price" th:field="*{price}" />
+						</div>
+
+						<div class="form-group col-sm-6">
+							<label for="HomePage Flag">HomePage Flag</label>
+						</div>
+						<div class="form-group col-sm-6">
+							<select th:field="*{homepageFlag}">
+								<option value="true">Yes</option>
+								<option value="false">No</option>
+							</select>
+						</div>
+
+
+						<div class="form-group col-sm-10">
+							<div class="row">
+								<div class="col-sm-1s col-sm-offset-5">
+									<input type="submit" value="Submit" class="btn btn-primary"
+										style="color: #fff; background-color: #204a86ba;" /> <input
+										type="reset" value="Reset" class="btn btn-primary"
+										style="color: #fff; background-color: #204a86ba;" />
+								</div>
+							</div>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+	<br>
+	<br>
+	<footer class="footer-distributed">
+		<div class="footer-right">
+			<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
+				class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a>
+			<a href="#"><i class="fa fa-github"></i></a>
+		</div>
+		<div class="footer-left">
+			<p class="footer-links">
+				<a href="/">Home</a> <a href="#">Games</a> <a href="/contactus">Contact</a>
+				<a href="/aboutus">About</a>
+			</p>
+			<p>Alpaca Games &copy; 2020</p>
+		</div>
+	</footer>
 </body>
-
-<!-- #######################3 Start of Footer #########################33 -->
-<footer class="footer-distributed">
-
-	<div class="footer-right">
-
-		<a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i
-			class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-linkedin"></i></a>
-		<a href="#"><i class="fa fa-github"></i></a>
-
-	</div>
-	<div class="footer-left">
-		<p class="footer-links">
-			<a href="/">Home</a> <a href="#">Games</a> <a href="/contactus">Contact</a>
-			<a href="/aboutus">About</a>
-		</p>
-		<p>Alpaca Games &copy; 2020</p>
-	</div>
-</footer>
 </html>

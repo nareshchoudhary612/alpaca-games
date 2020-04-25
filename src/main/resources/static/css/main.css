@@ -119,7 +119,10 @@
 .fling-minislide img:nth-child(1){animation-delay:15s;}
 
 
-
+.page-content
+{
+	font-family: 'Open Sans', sans-serif;
+}
 
 
 /* Style the counter cards */
