@@ -12,19 +12,17 @@ import com.tamu.alpacagames.service.GameService;
 
 @Service
 public class GameServiceImpl implements GameService {
-	
+
 	@Autowired
 	GameRepository gameRepository;
-	
+
 	@Override
 	public List<Game> getHomepageGames() {
-		
 		return gameRepository.findByhomepageFlag(true);
 	}
-	
+
 	@Override
 	public List<Game> getGames() {
-		
 		return gameRepository.findAll();
 	}
 
@@ -36,25 +34,16 @@ public class GameServiceImpl implements GameService {
 
 	@Override
 	public Optional<Game> getGameById(Long id) {
-		
 		return gameRepository.findById(id);
 	}
 
 	@Override
 	public void deleteById(Long id) {
-		 gameRepository.deleteById(id);
-		
-		 
+		gameRepository.deleteById(id);
 	}
 
 	@Override
 	public void save(Game game) {
-		
-		
 		gameRepository.saveAndFlush(game);
-		
 	}
-	
-	
-
 }

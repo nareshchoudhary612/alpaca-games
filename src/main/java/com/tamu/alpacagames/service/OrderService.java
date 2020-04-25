@@ -5,5 +5,4 @@ import com.tamu.alpacagames.model.Orders;
 
 public interface OrderService {
     List<Orders> GetOrdersByUserId(String userId);
-
 }

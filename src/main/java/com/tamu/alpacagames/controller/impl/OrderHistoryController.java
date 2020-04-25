@@ -16,7 +16,6 @@ public class OrderHistoryController {
 	@Autowired
 	OrderService orderService;
 
-
     @RequestMapping(value = "/orderhistory/{id}", method = RequestMethod.GET)
 	public ModelAndView getOrderHistoryPage(@PathVariable String id,Model model) {
 
@@ -24,6 +23,4 @@ public class OrderHistoryController {
 		model.addAttribute("orders", orderService.GetOrdersByUserId(id));
 		return new ModelAndView("html/order_history");
 	}
-
-
 }

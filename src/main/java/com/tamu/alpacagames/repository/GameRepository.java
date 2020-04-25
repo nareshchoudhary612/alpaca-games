@@ -9,10 +9,6 @@ import com.tamu.alpacagames.model.Game;
 
 @Repository
 public interface GameRepository extends JpaRepository<Game, Long>{
-	
-	
 	List<Game> findByhomepageFlag(boolean flag);
-	
 	Game findByName(String name);
-	
 }

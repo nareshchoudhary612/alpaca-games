@@ -4,18 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.tamu.alpacagames.controller.UserController;
 import com.tamu.alpacagames.model.Game;
-import com.tamu.alpacagames.model.Users;
 import com.tamu.alpacagames.repository.GameRepository;
 import com.tamu.alpacagames.service.GameService;
 import com.tamu.alpacagames.service.UserService;
@@ -29,7 +25,7 @@ public class AdminControllerImpl {
 
 	@Autowired
 	GameService gameService;
-	
+
 	@Autowired
 	GameRepository gameRepository;
 
@@ -60,7 +56,6 @@ public class AdminControllerImpl {
 
 		if (game.getGameId() == null) {
 			game = gameService.createGame(game);
-			// TODO Auto-generated method stub
 			System.out.println("here");
 		} else {
 			gameService.save(game);
@@ -98,25 +93,25 @@ public class AdminControllerImpl {
 		gameService.save(game);
 		return "redirect:/admin/games";
 	}
-	
+
 
 	/*************************************************************
 	 * 					Users CRUD /
 	 *************************************************************/
-		
+
 	@GetMapping("/users")
 	public ModelAndView getAllUsers(Model model) {
 		model.addAttribute("users", userService.getUsers());
 		return new ModelAndView("html/viewUsers.html");
 	}
-	
+
 	@PostMapping("/user/delete/{id}")
 	String deleteUser(@PathVariable Long id) {
 		userService.deleteById(id);
 
 		return "redirect:/admin/users";
 	}
-	
+
 	/*************************************************************
 	 * 					Orders CRUD /
 	 *************************************************************/

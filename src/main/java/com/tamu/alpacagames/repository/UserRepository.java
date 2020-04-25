@@ -9,6 +9,5 @@ import com.tamu.alpacagames.model.Users;
 
 @Repository
 public interface UserRepository extends JpaRepository<Users, Long> {
-	
 	public Optional<Users> findByUsername(String username);
 }

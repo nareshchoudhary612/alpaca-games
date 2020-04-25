@@ -12,26 +12,22 @@ import com.tamu.alpacagames.service.UserService;
 
 @Service
 public class UserServiceImpl implements UserService{
-	
+
 	@Autowired
 	UserRepository userRepository;
-	
+
 	@Override
 	public Users createUser(Users user) {
-		
 		return userRepository.save(user);
 	}
 
 	@Override
 	public boolean validateUser(Users user) {
-		
 		Optional<Users> fetchedUser = userRepository.findByUsername(user.getUsername());
-		
 		//return (fetchedUser.isPresent() && fetchedUser.get().getPassword().equals(user.getPassword()))?true:false;
 		return (fetchedUser.isPresent() && fetchedUser.get().getPassword().equals(user.getPassword()))?true:false;
 	}
-	
-	
+
 	@Override
 	public List<Users> getUsers(){
 		return userRepository.findAll();
@@ -40,7 +36,5 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public void deleteById(Long id) {
 		userRepository.deleteById(id);
-		
 	}
-
 }
