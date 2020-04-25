@@ -22,7 +22,8 @@ public class GameControllerImpl implements GameController {
 	
 	
 	@GetMapping("/games")
-	public String gamePage() {
+	public String gamePage(Model model) {
+		model.addAttribute("games", gameService.getGames());
 		return "html/Games";
 	}
 	
