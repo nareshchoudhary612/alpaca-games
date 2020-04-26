@@ -19,7 +19,7 @@
 
 .role{
     color: red;
-    font-size: 1.5em;
+    font-size: 1.8em;
 }
 
 .navbar
@@ -32,4 +32,9 @@
 	font-family: 'Open Sans', sans-serif;
 	font-size:1.2em;
 	font-weight:bolder;
+}
+
+.meet-us-heading
+{
+	color:red;
 }
