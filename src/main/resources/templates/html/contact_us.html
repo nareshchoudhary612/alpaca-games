@@ -40,8 +40,10 @@
 					</a>
 				</div>
 			</div>
-			<div class="collapse navbar-collapse" id="myNavbar" style="background-color: #333333; z-index: -1; height: 1px;">
-		      <ul class="nav navbar-nav navbar-right" style="background-color: #333333;">
+			<div class="collapse navbar-collapse" id="myNavbar"
+				style="background-color: #333333; z-index: -1; height: 1px;">
+				<ul class="nav navbar-nav navbar-right"
+					style="background-color: #333333;">
 					<li><a href="/">Home</a></li>
 					<li><a href="/games">Games</a></li>
 					<li><a href="/contactus">Contact</a></li>
@@ -83,16 +85,18 @@
 										<span class="input-group-addon"><span
 											class="glyphicon glyphicon-envelope"></span> </span> <input
 											type="email" class="form-control" id="email"
-											placeholder="Enter email" required="required" th:field="*{senderemail}" />
+											placeholder="Enter email" required="required"
+											th:field="*{senderemail}" />
 									</div>
 								</div>
 								<div class="form-group">
 									<label for="subject"> Subject</label> <select id="subject"
-										name="subject" class="form-control" required="required" th:field="*{subject}" >
-										<option value="na" selected="">Choose One:</option>
+										name="subject" class="form-control" th:field="*{subject}"
+										required>
+										<option value="Default" selected="">Choose One:</option>
 										<option value="service">General Customer Service</option>
+										<option value="product">Order Information</option>
 										<option value="suggestions">Suggestions</option>
-										<option value="product">Product Support</option>
 									</select>
 								</div>
 							</div>
@@ -100,7 +104,8 @@
 								<div class="form-group">
 									<label for="name"> Message</label>
 									<textarea name="message" id="message" class="form-control"
-										rows="9" cols="25" required="required" th:field="*{msg}"  placeholder="Message"></textarea>
+										rows="9" cols="25" required="required" th:field="*{msg}"
+										placeholder="Message"></textarea>
 								</div>
 							</div>
 							<div class="col-md-12">
@@ -118,13 +123,16 @@
 					<legend>
 						<span class="glyphicon glyphicon-globe"></span> Our office
 					</legend>
+
 					<address>
 						<strong>Alpaca Games</strong><br> 210 Olsen Blvd,<br>
-						College Station, TX 77845<br> <abbr title="Phone"> P:
-						</abbr> (123) 456-7890
+						College Station, TX 77845<br> <abbr title="Phone"> <span
+							class="glyphicon glyphicon-phone-alt"></span></abbr> (979) 739-0574
 					</address>
 					<address>
-						<strong>Kenil Shah</strong><br> <a href="mailto:#">contactus@alpacagames.com</a>
+						<strong>Alpaca Games</strong><br>
+						<span class="glyphicon glyphicon-envelope"></span><a
+							href="mailto:#"> contactus@alpacagames.com</a>
 					</address>
 				</form>
 			</div>
