@@ -16,7 +16,7 @@
  
 	<body id="home">
 	
-		<nav class="navbar navbar-default navbar-fixed-top navbar-inverse " style="position:sticky;" >
+		<nav class="navbar navbar-default navbar-fixed-top navbar-inverse " style="position:sticky;border-bottom: solid #254d85;" >
 		  <div class="container-fluid">
 		    <div class="navbar-header">
 		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -59,7 +59,7 @@
 				<li th:unless="${user==null}" class="dropdown1">
 			    	<a href="javascript:void(0)" class="dropbtn1" style="color: #72ce62;">
 			    		<span class="glyphicon glyphicon-user"></span>
-			    		<span th:text="${user}"></span>
+			    		<span th:text="${user}"></span>&nbsp;<span class="glyphicon glyphicon-menu-down"></span>
 			    	</a>
 	    			<ul class="dropdown1-content">
 		    			<li><a class="dropdown1-content-a" href="/orderhistory/1">Orders</a></li>
@@ -71,7 +71,7 @@
 		    </div>
 		  </div>
 		</nav>
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="border-bottom: solid 20px #254d85;">
 			    <!-- Indicators -->
 			    <ol class="carousel-indicators">
 			      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
