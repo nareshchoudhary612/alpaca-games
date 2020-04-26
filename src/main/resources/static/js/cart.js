@@ -1,6 +1,12 @@
 var myCart = [];
 var addToCart= function(item){
-	var mycart = JSON.parse(localStorage['cart']);
+	
+	if(localStorage['cart']==undefined){
+		//
+	}else{
+		myCart = JSON.parse(localStorage['cart']);
+	}
+	
 	const index = myCart.indexOf(item);
 	if(index==-1){
 		myCart.push(item);
