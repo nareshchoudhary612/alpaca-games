@@ -126,3 +126,8 @@ body{
 .form-control{
 	color:white;
 }
+
+.row 
+{
+	margin-bottom:50px;
+}
