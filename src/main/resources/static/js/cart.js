@@ -21,3 +21,7 @@ var deleteFromCart = function(item){
 var getCart = function(){
 	return JSON.parse(localStorage['cart']);
 }
+
+var addedToCart = function(obj){
+	obj.innerHTML = '<span class="glyphicon glyphicon-ok"></span> Added';
+}
