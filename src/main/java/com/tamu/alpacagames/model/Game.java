@@ -1,10 +1,13 @@
 package com.tamu.alpacagames.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 public class Game {
@@ -16,6 +19,8 @@ public class Game {
 	String name;
 	String creater;
 	String genre;
+	
+	@Column(columnDefinition="TEXT") 
 	String description;
 	String imageUrl;
 	String platformType;
