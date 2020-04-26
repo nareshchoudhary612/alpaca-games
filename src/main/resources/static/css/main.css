@@ -186,8 +186,14 @@ li.dropdown1 {
 .page-content
 {
 	font-family: 'Open Sans', sans-serif;
+	font-size:1.2em;
 }
 
+.form-group.required .control-label:after {
+  content:"*";
+  color:red;
+  
+}
 
 /* Style the counter cards */
 .card {
