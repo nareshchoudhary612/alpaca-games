@@ -16,7 +16,7 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="../../../css/main.css">
-
+<script src="../../../js/admin.js"> </script>
 </head>
 
 <body id="editgame">
@@ -51,165 +51,172 @@
 			</div>
 		</div>
 	</nav>
-<div class="page-content">
-	<div class="jumbotron jumbotron-sm">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 col-lg-12">
-					<h2 class="blue">Edit Game</h2>
+	<div class="page-content">
+		<div class="jumbotron jumbotron-sm">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-lg-12">
+						<h2 class="blue">Edit Game</h2>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="col-sm-2"></div>
-	<div class="col-sm-8"><
-	<div class="well well-sm">
-			<div class="row">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8">
+			<div class="well well-sm">
+				<div class="row">
 
-				<div class="col-sm-10">
-					<form th:object="${game}" method="post" role="form">
+					<div class="col-sm-10">
+						<form th:object="${game}" method="post" role="form" id="editform">
 
-						<div class="form-group col-sm-6">
-							<label for="Name">Name*</label>
-						</div>
-						<div class="form-group col-sm-6">
-							<input type="text" id="name" placeholder="Enter Name"
-								th:field="*{name}" required/>
-						</div>
+							<div class="form-group col-sm-6 form-group required">
+								<label for="Name" class="control-label">Name</label>
+							</div>
+							<div class="form-group col-sm-6 text-wrap">
+								<input type="text" id="name" placeholder="Enter Name"
+									th:field="*{name}" required />
+							</div>
 
-						<div class="form-group col-sm-6">
-							<label for="Creator">Creator*</label>
-						</div>
-						<div class="form-group col-sm-6">
-							<input type="text" placeholder="Enter Creator"
-								th:field="*{creater}" required/>
-						</div>
-						<div class="form-group col-sm-6">
-							<label for="Genre">Genre</label>
-						</div>
-						<div class="form-group col-sm-6">
-							<input type="text" placeholder="Enter Genre" th:field="*{genre}" />
-						</div>
-						<div class="form-group col-sm-6">
-							<label for="Description">Description</label>
-						</div>
-						<div class="form-group col-sm-6">
-							<input type="text" placeholder="Enter Description"
-								th:field="*{description}" />
-						</div>
-						<div class="form-group col-sm-6">
-							<label for="imageUrl">Image Url*</label>
-						</div>
-						<div class="form-group col-sm-6">
-							<input type="text" placeholder="Enter Image URL"
-								th:field="*{imageUrl}" required/>
-						</div>
-						<div class="form-group col-sm-6">
-							<label for=imageUrl1>Product Detail Image URL1*</label>
-						</div>
-						<div class="form-group col-sm-6">
-							<input type="text" placeholder="Enter Image URL1"
-								th:field="*{imageUrl1}" required/>
-						</div>
-						<div class="form-group col-sm-6">
-							<label for="imageUrl2">Product Detail Image URL2</</label>
-						</div>
-						<div class="form-group col-sm-6">
-							<input type="text" placeholder="Enter Image URL2"
-								th:field="*{imageUrl2}" />
-						</div>
-						<div class="form-group col-sm-6">
-							<label for="Platform Type">Platform Type</label>
-						</div>
-						<div class="form-group col-sm-6 ">
-							
-							<select  th:field="*{platformType}">
-								<option value="XBox">XBox</option>
-								<option value="PS4">PS 4</option>
-								<option value="PS3">PS 3</option>
-							</select>
-							
-						</div>
-						<div class="form-group col-sm-6">
-							<label for="Age Category"></label>
-						</div>
+							<div class="form-group col-sm-6 form-group required">
+								<label for="Creator" class="control-label">Creator</label>
+							</div>
+							<div class="form-group col-sm-6">
+								<input type="text" placeholder="Enter Creator"
+									th:field="*{creater}" required />
+							</div>
+							<div class="form-group col-sm-6">
+								<label for="Genre">Genre</label>
+							</div>
+							<div class="form-group col-sm-6">
+								<input type="text" placeholder="Enter Genre" th:field="*{genre}" />
+							</div>
+							<div class="form-group col-sm-6">
+								<label for="Description">Description</label>
+							</div>
+							<div class="form-group col-sm-6">
+								<textarea rows="8" cols="35" placeholder="Enter Description"
+									th:field="*{description}"></textarea>
+							</div>
+							<div class="form-group col-sm-6 form-group required">
+								<label for="imageUrl" class="control-label">Image Url</label>
+							</div>
+							<div class="form-group col-sm-6">
+								<input type="text" placeholder="Enter Image URL"
+									th:field="*{imageUrl}" required />
+							</div>
+							<div class="form-group col-sm-6 form-group required">
+								<label for=imageUrl1 class="control-label">Product
+									Detail Image URL1</label>
+							</div>
+							<div class="form-group col-sm-6">
+								<input type="text" placeholder="Enter Image URL1"
+									class="control-label" th:field="*{imageUrl1}" required />
+							</div>
+							<div class="form-group col-sm-6">
+								<label for="imageUrl2">Product Detail Image URL2</</label>
+							</div>
+							<div class="form-group col-sm-6">
+								<input type="text" placeholder="Enter Image URL2"
+									th:field="*{imageUrl2}" />
+							</div>
+							<div class="form-group col-sm-6">
+								<label for="Platform Type">Platform Type</label>
+							</div>
+							<div class="form-group col-sm-6 ">
 
-						<div class="form-group col-sm-6">
-							<label for="Age Category">Age Category*</label>
-						</div>
+								<select th:field="*{platformType}">
+									<option value="XBox">XBox</option>
+									<option value="PS4">PS 4</option>
+									<option value="PS3">PS 3</option>
+								</select>
 
-						<div class="form-group col-sm-6">
-							<select th:field="*{ageCategory}">
-								<option value="1">5-10</option>
-								<option value="2">10-20</option>
-								<option value="3">20+</option>
-							</select>
-						</div>
+							</div>
+							<div class="form-group col-sm-6">
+								<label></label>
+							</div>
 
+							<div class="form-group col-sm-6 form-group required">
+								<label for="Age Category" class="control-label">Age
+									Category</label>
+							</div>
 
-						<div class="form-group col-sm-6">
-							<label for="Available"></label>
-						</div>
-						<div class="form-group col-sm-6">
-							<label for="Available">Available*</label>
-						</div>
-						<div class="form-group col-sm-6">
-							<select th:field="*{available}">
-								<option value="true">Yes</option>
-								<option value="false">No</option>
-							</select>
-						</div>
-
-						<div class="form-group col-sm-6"></div>
-
-						<div class="form-group col-sm-6">
-							<label for="Discount">Discounted Price*</label>
-						</div>
-						<div class="form-group col-sm-6">
-							<input type='number' pattern='[0-9]+(\\.[0-9][0-9]?)?' th:field="*{discount}"
-								placeholder="Enter Discount" required/>
-						</div>
-
-						<div class="form-group col-sm-6">
-							<label for="Price">Actual Price*</label>
-						</div>
-						<div class="form-group col-sm-6">
-							<input type='number' pattern='[0-9]+(\\.[0-9][0-9]?)?' placeholder="Enter Price" th:field="*{price}" required/>
-						</div>
-
-						<div class="form-group col-sm-6">
-							<label for="HomePage Flag">HomePage Flag</label>
-						</div>
-						<div class="form-group col-sm-6">
-							<select th:field="*{homepageFlag}">
-								<option value="true">Yes</option>
-								<option value="false">No</option>
-							</select>
-						</div>
+							<div class="form-group col-sm-6">
+								<select required th:field="*{ageCategory}">
+									<option value="1">5-10</option>
+									<option value="2">10-20</option>
+									<option value="3">20+</option>
+								</select>
+							</div>
 
 
-						<div class="form-group col-sm-10">
-							<div class="row">
-								<div class="col-sm-10 col-sm-offset-6">
-									<input type="submit" value="Submit" class="btn btn-primary"
-										style="color: #fff; background-color: #204a86ba;" /> <input
-										type="reset" value="Reset" class="btn btn-primary"
-										style="color: #fff; background-color: #204a86ba;" />
+							<div class="form-group col-sm-6">
+								<label for="Available"></label>
+							</div>
+							<div class="form-group col-sm-6 form-group required">
+								<label for="Available" class="control-label">Available</label>
+							</div>
+							<div class="form-group col-sm-6">
+								<select th:field="*{available}">
+									<option value="true">Yes</option>
+									<option value="false">No</option>
+								</select>
+							</div>
+
+							<div class="form-group col-sm-6"></div>
+
+							<div class="form-group col-sm-6 form-group required">
+								<label for="Discount" class="control-label">Discounted
+									Price*</label>
+							</div>
+							<div class="form-group col-sm-6">
+								<input type='number' pattern='[0-9]+(\\.[0-9][0-9]?)?'
+									th:field="*{discount}" placeholder="Enter Discount" required />
+							</div>
+
+							<div class="form-group col-sm-6 form-group required">
+								<label for="Price" class="control-label">Actual Price</label>
+							</div>
+							<div class="form-group col-sm-6">
+								<input type='number' class="control-label"
+									pattern='[0-9]+(\\.[0-9][0-9]?)?' placeholder="Enter Price"
+									th:field="*{price}" required />
+							</div>
+
+							<div class="form-group col-sm-6 form-group required">
+								<label for="HomePage Flag" class="control-label">HomePage
+									Flag</label>
+							</div>
+							<div class="form-group col-sm-6">
+								<select th:field="*{homepageFlag}">
+									<option value="true">Yes</option>
+									<option value="false">No</option>
+								</select>
+							</div>
+
+
+							<div class="form-group col-sm-10">
+								<div class="row">
+									<div class="col-sm-10 col-sm-offset-6">
+										<input type="submit" value="Submit" class="btn btn-primary"
+											style="color: #fff; background-color: #204a86ba;" /> <input
+											type="reset" value="Reset" class="btn btn-primary"
+											style="color: #fff; background-color: #204a86ba;" onclick="resetEditForm()" />
+									</div>
 								</div>
 							</div>
-						</div>
 
-					</form>
-					
+						</form>
+
+					</div>
+
 				</div>
-				
+
 			</div>
-			
+			<div>  
+			Note:Dummy values for Image URL : images/SP_card.jpg , images/SP_card_2.jpg</div>
 		</div>
-		<div> Note:Dummy values for Image URL : images/SP_card.jpg , images/SP_card_2.jpg</div>
 	</div>
-</div>
 
 
 
