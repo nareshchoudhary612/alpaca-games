@@ -11,6 +11,7 @@
 	 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="../css/main.css">
+		<script src="../js/cart.js"></script>
 	</head>
  
 	<body id="home">
@@ -128,6 +129,12 @@
 		<br>
 		<br>
 		<div>
+			<div class="row horizontal_bar">
+				<div class="col-sm-4"></div>
+				<div class="col-sm-4"><p class="title-font">Just Released</p></div>
+				<div class="col-sm-4"></div>
+			</div>
+						
 			<div class="col-sm-3" th:each="game : ${games}">
 				<div class="panel panel-primary">
 					<div class="panel-heading">
@@ -140,8 +147,8 @@
 					
 						<form th:action="'game/' + ${game.gameId}" method="get">
 							<div class="panel-footer" style="overflow: auto;">
-								<button type="submit" class="card_button btn pull-left" style="background-color: #dc0345;">
-								<span class="glyphicon glyphicon-plus"></span> Add to cart
+								<button class="card_button btn pull-left" style="background-color: #dc0345;">
+									<span class="glyphicon glyphicon-plus"></span> Add to cart
 								</button>
 								<button type="submit" class="card_button btn pull-right" style="background-color: green;">
 									<span class="glyphicon glyphicon-share-alt"></span> View Game
@@ -168,10 +175,10 @@
 		<br>
 		<footer class="footer-distributed">
 			<div class="footer-right">
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-twitter"></i></a> 
-				<a href="#"><i class="fa fa-linkedin"></i></a>
-				<a href="#"><i class="fa fa-github"></i></a>
+				<a href="https://facebook.com/"><i class="fa fa-facebook"></i></a>
+				<a href="https://twitter.com/"><i class="fa fa-twitter"></i></a> 
+				<a href="https://linkedin.com/"><i class="fa fa-linkedin"></i></a>
+				<a href="https://github.com/chetan2119/alpaca-games"><i class="fa fa-github"></i></a>
 			</div>
 			<div class="footer-left">
 				<p class="footer-links">
