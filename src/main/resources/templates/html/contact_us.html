@@ -20,6 +20,13 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="../css/contact_us.css">
 
+<script>
+function ShowSuccessMessage(){
+    var message = "Thank you for contacting us.We will get in touch with you soon. Have a great day!"
+    window.alert(message);
+  
+}
+</script>
 </head>
 
 <body id="home">
@@ -69,9 +76,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8">
-				<span th:text="${success}"></span>
 				<div class="well well-sm">
-					<form th:object="${message}" method="post">
+					<form th:object="${message}" method="post" id="contactus">
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
@@ -110,7 +116,7 @@
 							</div>
 							<div class="col-md-12">
 								<button type="submit" class="btn btn-primary pull-right"
-									id="btnContactUs"
+									id="btnContactUs"  onclick="ShowSuccessMessage()"
 									style="color: #fff; background-color: #204a86ba;">
 									Send Message</button>
 							</div>
