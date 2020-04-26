@@ -1,4 +1,4 @@
-body
+.row-about-us
 {
     font-family:'Yanone Kaffeesatz', sans-serif;
 }
@@ -20,4 +20,16 @@ body
 .role{
     color: red;
     font-size: 1.5em;
+}
+
+.navbar
+{
+	margin-bottom:0px;
+} 
+
+.about-us h2
+{
+	font-family: 'Open Sans', sans-serif;
+	font-size:1.2em;
+	font-weight:bolder;
 }
