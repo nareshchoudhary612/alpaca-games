@@ -36,6 +36,17 @@ public class RegistrationControllerImpl implements RegistrationController {
 	@RequestMapping(value = "/createUser", method = RequestMethod.POST)
 	public ModelAndView addUser(@ModelAttribute("user") Users user) {
 		Users createdUser = userService.createUser(user);
-		return new ModelAndView("html/welcome", "firstname", createdUser.getFirstname());
+		
+		ModelAndView mav = new ModelAndView("html/login");
+		/*
+		 * String message = new String();
+		 * mav.addObject("Thank you for creatin the account", message);
+		 */
+		String msg = "Thank you "+createdUser.getFirstname()+ " for joining our family. Please login now.";
+		mav.addObject("message", msg);
+		return mav;
+		
+		
+		//return new ModelAndView("html/login", "firstname", createdUser.getFirstname());
 	}
 }

@@ -29,6 +29,7 @@ public class UserControllerImpl implements UserController {
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public ModelAndView showLogin() {
 		ModelAndView mav = new ModelAndView("html/login");
+		mav.addObject("message", "");
 		mav.addObject("user", new Users());
 		return mav;
 	}
@@ -67,7 +68,7 @@ public class UserControllerImpl implements UserController {
 		} else {
 			System.out.println("Login failed!");
 			mav = new ModelAndView("html/login");
-			mav.addObject("message", "Username or Password is wrong!!");
+			mav.addObject("message", "Username or Password is wrong!! Please try again");
 		}
 		return mav;
 	}
