@@ -31,3 +31,19 @@ var getCart = function(){
 var addedToCart = function(obj){
 	obj.innerHTML = '<span class="glyphicon glyphicon-ok"></span> Added';
 }
+
+
+var generateCart= function(){
+	var table = document.getELementById("cart_Table");
+}
+
+var openCartPage = function(f){
+	console.log("dd");
+	if(localStorage['cart']==undefined){
+		//
+	}else{
+		f.mycart.value = JSON.parse(localStorage.cart);
+	}	
+	f.action="/checkout";
+    f.submit();
+}

@@ -66,8 +66,12 @@
 		      			<li><a class="dropdown1-content-a" href="/logout"><span style="color: red; font-weight: bold;" class="glyphicon glyphicon-off"></span> Logout</a></li>
 		    		</ul>
 			    </li>
-				<li><a href="/checkout"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+			    <li><a href="#" onclick="openCartPage(document.getElementById('cartForm'))"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+				
 		      </ul>
+		      <form id="cartForm" method="post" onSubmit="openCartPage(this.form)">
+			        <input type = "hidden" name = "mycart"/>			
+			  </form>
 		    </div>
 		  </div>
 		</nav>
