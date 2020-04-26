@@ -3,11 +3,16 @@ keyframes fling-minislide { 25%{
 	opacity: 1;
 }
 
-40%{
+40%{ 
 opacity
 :
 0;
 }
+}
+
+#product
+{
+	font-family: 'Open Sans', sans-serif;
 }
 .fling-minislide img:nth-child(4) {
 	animation-delay: 0s;
@@ -30,6 +35,8 @@ opacity
 	z-index: 100;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;
+	margin:0px;
+	
 }
 
 .single_product_details_area .single_product_desc {
@@ -47,12 +54,14 @@ opacity
 	color: #787878;
 	margin-bottom: 10px;
 	display: block;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .single_product_details_area .single_product_desc a>h2 {
 	font-size: 30px;
 	display: block;
 	margin-bottom: 10px;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .single_product_details_area .single_product_desc .product-price {
@@ -77,13 +86,15 @@ opacity
 	padding-left: 4%;
 	padding-top: 2%;
 	padding-bottom: 2%;
+	
 }
 
 .product-desc-symbols {
-	padding: 5px; /* Some padding */
-	/* Set a small width */
+	padding: 5px;
 	height: auto;
 }
+
+
 
 #platform-dropdown {
 	padding-bottom: 20px;
@@ -99,11 +110,13 @@ opacity
 	border-radius: 0;
 	padding: 0 40px;
 	text-transform: uppercase;
-	font-size: 12px;
+	font-size: 1.2em;
 	line-height: 50px;
 	background-color: #dc0345;
 	letter-spacing: 1.5px;
 	font-weight: 600;
+	font-family: 'Open Sans', sans-serif;
+
 }
 
 .essence-btn:hover, .essence-btn:focus {
