@@ -6,7 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/payment.css">
     <link rel="shortcut icon" type="../images/icon.png" href="../images/icon.png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -66,18 +65,18 @@
                         <tr>
                             <td class="col-sm-8 col-sm-6">
                             <div class="media">
-                                <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a>
+                                <!-- <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a> -->
                                 <div class="media-body">
-                                    <h4 class="media-heading" ><a href="#" th:text="${game.name}"></a></h4>
-                                    <h5 class="media-heading"> by <a href="#" th:text="${game.creater}"></a></h5>
+                                    <h4 class="media-heading" ><a th:href="@{'/game/' + ${game.gameId}}" th:text="${game.name}"></a></h4>
+                                    <h5 class="media-heading"> by <span th:text="${game.creater}"></span></h5>
                                     <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
                                 </div>
                             </div></td>
                             <td class="col-sm-1 col-sm-1" style="text-align: center">
                             <input type="text" class="form-control" id="exampleInputEmail1" value="1">
                             </td>
-                            <td class="col-sm-1 col-sm-1 text-center"><strong>$49.00</strong></td>
-                            <td class="col-sm-1 col-sm-1 text-center"><strong>$49.00</strong></td>
+                            <td class="col-sm-1 col-sm-1 text-center"><strong><span th:text="${game.price}"></span></strong></td>
+                            <td class="col-sm-1 col-sm-1 text-center"><strong><span th:text="${game.price}"></span></strong></td>
                             <td class="col-sm-1 col-sm-1">
                             <button type="button" class="btn btn-danger">
                                 <span class="glyphicon glyphicon-remove"></span> Remove

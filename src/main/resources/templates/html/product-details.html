@@ -81,10 +81,10 @@
 			<span th:text="${game.creater}"></span> <a href="cart.html">
 				<h2 th:text="${game.name}"></h2>
 			</a>
-			<p class="product-price">
-				<span class="old-price"><span th:text="${game.price}"></span></span>
-				<div th:text="${game.discount}"></div>
-			</p>
+			<div class="product-price">
+				<span class="old-price">$<span th:text="${game.price}"></span></span>
+				$<strong th:text="${game.discount}"></strong>
+			</div>
 			 <p class="product-desc" align="justify" th:text="${game.description}"></p>
 
 			<!-- Symbols-->
