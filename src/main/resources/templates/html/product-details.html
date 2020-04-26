@@ -86,14 +86,14 @@
 		<!-- Single Product Description -->
 
 		<div class="single_product_desc clearfix col-sm-8">
-			<span th:text="${game.creater}"></span> 
-			<a href="cart.html"> 
-			<th:text="${game.name}"></a>
-			<p class="product-price">
-				<span class="old-price"><span th:text="${game.price}"></span></span>
-			<div th:text="${game.discount}"></div>
-			<p class="product-desc" align="justify" th:text="${game.description}"></p>
-
+			<span th:text="${game.creater}"></span> <a href="cart.html">
+				<h2 th:text="${game.name}"></h2>
+			</a>
+			<div class="product-price">
+				<span class="old-price">$<span th:text="${game.price}"></span></span>
+				$<strong th:text="${game.discount}"></strong>
+			</div>
+			 <p class="product-desc" align="justify" th:text="${game.description}"></p>
 
 			<div class="product-desc-symbols row ">
 				<div class="test2 ">
