@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.tamu.alpacagames.model.Game;
 import com.tamu.alpacagames.model.Users;
 import com.tamu.alpacagames.repository.GameRepository;
+import com.tamu.alpacagames.repository.MessageRepository;
 import com.tamu.alpacagames.service.GameService;
 import com.tamu.alpacagames.service.UserService;
 import com.tamu.alpacagames.service.impl.OrderHistoryImpl;
@@ -34,6 +35,9 @@ public class AdminControllerImpl {
 	
 	@Autowired
 	OrderHistoryImpl orderService;
+	
+	@Autowired
+	MessageRepository messageRepository;
 	
 	@RequestMapping(value = "/loginProcess", method = RequestMethod.POST)
 	public ModelAndView loginProcess(@ModelAttribute("user") Users user, Model model) {
@@ -141,5 +145,24 @@ public class AdminControllerImpl {
 	public ModelAndView getAllOrders(Model model) {
 		model.addAttribute("orders", orderService.getOrders());
 		return new ModelAndView("html/viewOrders.html");
+	}
+	
+	/*************************************************************
+	 * 					Message CRUD /
+	 *************************************************************/
+	@GetMapping("/messages")
+	public ModelAndView getAllMessages(Model model) {
+		model.addAttribute("messages", messageRepository.findAll());
+		return new ModelAndView("html/viewMessages.html");
+	}
+	
+	@PostMapping("message/delete/{id}")
+	String deleteMessage(@PathVariable Long id) {
+		
+		System.out.println(id);
+		messageRepository.deleteById(id);
+		
+
+		return "redirect:/admin/messages";
 	}
 }
