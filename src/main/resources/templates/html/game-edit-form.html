@@ -143,6 +143,7 @@
 
 							<div class="form-group col-sm-6">
 								<select required th:field="*{ageCategory}">
+									<option value="0">Age Category</option>
 									<option value="1">5-10</option>
 									<option value="2">10-20</option>
 									<option value="3">20+</option>
@@ -151,7 +152,7 @@
 
 
 							<div class="form-group col-sm-6">
-								<label for="Available"></label>
+								<label for=""></label>
 							</div>
 							<div class="form-group col-sm-6 form-group required">
 								<label for="Available" class="control-label">Available</label>
@@ -167,7 +168,7 @@
 
 							<div class="form-group col-sm-6 form-group required">
 								<label for="Discount" class="control-label">Discounted
-									Price*</label>
+									Price</label>
 							</div>
 							<div class="form-group col-sm-6">
 								<input type='number' pattern='[0-9]+(\\.[0-9][0-9]?)?'
@@ -183,8 +184,8 @@
 									th:field="*{price}" required />
 							</div>
 
-							<div class="form-group col-sm-6 form-group required">
-								<label for="HomePage Flag" class="control-label">HomePage
+							<div class="form-group col-sm-6 form-group">
+								<label for="HomePage Flag" >HomePage
 									Flag</label>
 							</div>
 							<div class="form-group col-sm-6">
