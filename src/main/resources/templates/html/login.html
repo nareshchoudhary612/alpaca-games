@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="../css/main.css">
-
+<link rel="stylesheet" href="../css/login.css">
 <link rel="stylesheet" href="../css/footer.css">
 <link rel="shortcut icon" type="../images/icon.png"
 	href="../images/icon.png" />
@@ -17,49 +17,48 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="../css/login.css">
 
-<script>
-	$(function() {
 
-		$('#login-form-link').click(function(e) {
-			$("#login-form").delay(100).fadeIn(100);
-			$("#register-form").fadeOut(100);
-			$("#admin-login-form").fadeOut(100);
-			$('#register-form-link').removeClass('active');
-			$('#admin-login-form-link').removeClass('active');
-			$(this).addClass('active');
-			e.preventDefault();
-		});
-		$('#register-form-link').click(function(e) {
-			$("#register-form").delay(100).fadeIn(100);
-			$("#login-form").fadeOut(100);
-			$("#admin-login-form").fadeOut(100);
-			$('#login-form-link').removeClass('active');
-			$('#admin-login-form-link').removeClass('active');
-			$(this).addClass('active');
-			e.preventDefault();
-		});
-		$('#admin-login-form-link').click(function(e) {
-			$("#admin-login-form").delay(100).fadeIn(100);
-			$("#register-form").fadeOut(100);
-			$("#login-form").fadeOut(100);
-			$('#login-form-link').removeClass('active');
-			$('#register-form-link').removeClass('active');
-			$(this).addClass('active');
-			e.preventDefault();
-		});
+<script>$(function() {
 
-	});
-
-	function confirmPass() {
-		var pass = document.getElementById("reg-password").value
-		var confPass = document.getElementById("reg-confirm-password").value
-		if (pass != confPass) {
-			alert('Password and Confirm password do not match');
-		}
-	}
-</script>
+        $('#login-form-link').click(function(e) {
+        $("#login-form").delay(100).fadeIn(100);
+         $("#register-form").fadeOut(100);
+         $("#admin-login-form").fadeOut(100);
+        $('#register-form-link').removeClass('active');
+        $('#admin-login-form-link').removeClass('active');
+        $(this).addClass('active');
+        e.preventDefault();
+      });
+      $('#register-form-link').click(function(e) {
+        $("#register-form").delay(100).fadeIn(100);
+         $("#login-form").fadeOut(100);
+         $("#admin-login-form").fadeOut(100);
+        $('#login-form-link').removeClass('active');
+        $('#admin-login-form-link').removeClass('active');
+        $(this).addClass('active');
+        e.preventDefault();
+      });
+      $('#admin-login-form-link').click(function(e) {
+          $("#admin-login-form").delay(100).fadeIn(100);
+           $("#register-form").fadeOut(100);
+           $("#login-form").fadeOut(100);
+           $('#login-form-link').removeClass('active');
+          $('#register-form-link').removeClass('active');
+          $(this).addClass('active');
+          e.preventDefault();
+        });
+    
+    });
+    
+function confirmPass() {
+    var pass = document.getElementById("reg-password").value
+    var confPass = document.getElementById("reg-confirm-password").value
+    if(pass != confPass) {
+        alert('Password and Confirm password do not match');
+    }
+}
+    </script>
 </head>
 
 <body id="login">
@@ -80,8 +79,8 @@
 					</a>
 				</div>
 			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav navbar-right">
+			<div class="collapse navbar-collapse" id="myNavbar" style="background-color: #333333; z-index: -1; height: 1px;">
+		      <ul class="nav navbar-nav navbar-right" style="background-color: #333333;">
 					<li><a href="/">Home</a></li>
 					<li><a href="/games">Games</a></li>
 					<li><a href="/contactus">Contact</a></li>
@@ -105,6 +104,7 @@
 		</div>
 	</div>
 
+
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-md-offset-3">
@@ -116,15 +116,13 @@
 								<button type="button" class="loginbtn active"
 									id="login-form-link">Login</button>
 							</div>
-							<div class="col-xs-4"
-								style="padding-left: 0px; padding-right: 0px;">
+							<div class="col-xs-4" style="padding-left: 0px; padding-right: 0px;">
 								<!-- <a href="#" id="register-form-link">Register</a> -->
 								<button type="button" class="loginbtn" id="register-form-link">Register</button>
 							</div>
-							<div class="col-xs-4" style="padding-left: 0px;">
+							<div class="col-xs-4" style="padding-left: 0px; ">
 								<!-- <a href="#" id="register-form-link">Register</a> -->
-								<button type="button" class="loginbtn"
-									id="admin-login-form-link">Admin Login</button>
+								<button type="button" class="loginbtn" id="admin-login-form-link">Admin Login</button>
 							</div>
 						</div>
 						<hr>
@@ -143,8 +141,7 @@
 									</div>
 									<div class="form-group">
 										<input type="password" name="password" id="password"
-											tabindex="2" class="form-control" placeholder="Password"
-											required>
+											tabindex="2" class="form-control" placeholder="Password" required>
 									</div>
 									<div class="form-group text-center">
 										<input type="checkbox" tabindex="3" class="" name="remember"
@@ -214,7 +211,7 @@
 									<div class="form-group">
 										<input th:field="*{phone}" type="tel" pattern="^\d{10}$"
 											name="phone" id="phone" tabindex="8" class="form-control"
-											placeholder="Enter your Phone No.: XXXXXXXXXX" value=""
+											placeholder="Enter your Phone No: XXXXXXXXXX" value=""
 											required>
 									</div>
 
@@ -242,7 +239,7 @@
 											tabindex="2" class="form-control"
 											placeholder="Admin Password" required>
 									</div>
-
+									
 									<div class="form-group">
 										<div class="row">
 											<div class="col-sm-6 col-sm-offset-3">
@@ -255,7 +252,9 @@
 									</div>
 									<div class="form-group">
 										<div class="row">
-											<div class="col-lg-12"></div>
+											<div class="col-lg-12">
+												
+											</div>
 										</div>
 									</div>
 								</form>

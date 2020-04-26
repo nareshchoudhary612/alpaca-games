@@ -62,8 +62,8 @@
 					</a>
 				</div>
 			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav navbar-right">
+			<div class="collapse navbar-collapse" id="myNavbar" style="background-color: #333333; z-index: -1; height: 1px;">
+		      <ul class="nav navbar-nav navbar-right" style="background-color: #333333;">
 					<li><a href="/">Home</a></li>
 					<li><a href="/games">Games</a></li>
 					<li><a href="/contactus">Contact</a></li>
@@ -117,11 +117,16 @@
 										style="width: 100%" alt="Image">
 								</div>
 
-								<form th:action="'game/' + ${game.gameId}" method="get">
-									<div class="panel-footer" style="overflow: auto;">
-										<button type="submit" class="card_button btn pull-right">BuyNow</button>
-									</div>
-								</form>
+								<div class="panel-footer" style="overflow: auto;">
+									<button class="card_button btn pull-left" style="background-color: #dc0345;" th:onclick="'javascript:addToCart(' + ${game.gameId} + ');addedToCart(this);'">
+										<span class="glyphicon glyphicon-plus"></span> Add to cart
+									</button>
+									<form th:action="'game/' + ${game.gameId}" method="get">
+										<button type="submit" class="card_button btn pull-right" style="background-color: green;">
+											<span class="glyphicon glyphicon-share-alt"></span> View Game
+										</button>
+									</form>
+								</div>
 
 							</div>
 							<a hidden href="#">[[${game.name}]][[${game.creater}]][[${game.platformType}]][[${game.genre}]]</a><br>
