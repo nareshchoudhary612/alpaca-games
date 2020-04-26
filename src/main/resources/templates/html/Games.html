@@ -143,11 +143,16 @@
 							style="width: 100%" alt="Image">
 					</div>
 					
-						<form th:action="'game/' + ${game.gameId}" method="get">
-							<div class="panel-footer" style="overflow: auto;">
-								<button type="submit" class="card_button btn pull-right">BuyNow</button>
-							</div>
-						</form>
+					<form th:action="'game/' + ${game.gameId}" method="get">
+						<div class="panel-footer" style="overflow: auto;">
+							<button type="submit" class="card_button btn pull-left" style="background-color: #ff4700;">
+								<span class="glyphicon glyphicon-plus"></span> Add to cart
+							</button>
+							<button type="submit" class="card_button btn pull-right" style="background-color: green;">
+								<span class="glyphicon glyphicon-share-alt"></span> BuyNow
+							</button>
+						</div>
+					</form>
 					
 				</div>
 				<br>				
