@@ -66,6 +66,7 @@ public class UserControllerImpl implements UserController {
 
 			//mav.addObject("username", user.getUsername());
 		} else {
+			
 			System.out.println("Login failed!");
 			mav = new ModelAndView("html/login");
 			mav.addObject("message", "Username or Password is wrong!! Please try again");
