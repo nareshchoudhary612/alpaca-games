@@ -51,7 +51,6 @@ public class ContactUsControllerImpl {
 		
 		ModelAndView mav = new ModelAndView("html/contact_us");
 		mav.addObject("message", new Message());
-		mav.addObject("success", "Thank you for your feedback. If required, we will get back to you");
 		
 		Users user = LoggedInUser.getUser();
 		String name = null;
@@ -63,7 +62,7 @@ public class ContactUsControllerImpl {
 		}
 		
 		model.addAttribute("user",name);
-		
+		model.addAttribute("success", "Thank you for contacting us.We will get in touch with you soon. Have a great day!");
 		return mav;
 		
 	}
