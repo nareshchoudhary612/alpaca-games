@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.google.gson.Gson;
 import com.tamu.alpacagames.model.Game;
 import com.tamu.alpacagames.model.OrderLine;
 import com.tamu.alpacagames.repository.OrderLineRepository;
@@ -47,8 +48,9 @@ public class AddToCartControllerImpl{
 				list.add(gameService.getGameById(Long. parseLong(gameIds[i])).get());
 			}
 		}
-		
+		Gson gson = new Gson();
 		model.addAttribute("gameList",list);
+		model.addAttribute("gameListString",gson.toJson(list));
 		return new ModelAndView("html/cart");
 	}
 }

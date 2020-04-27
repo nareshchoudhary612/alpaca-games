@@ -14,7 +14,7 @@
   
     <body id="cart">
       
-      <nav class="navbar navbar-default navbar-fixed-top navbar-inverse " style="position:sticky;" >
+      <nav class="navbar navbar-default navbar-fixed-top navbar-inverse " style="position:sticky;border-bottom: solid #254d85;" >
 		  <div class="container-fluid">
 		    <div class="navbar-header">
 		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -35,9 +35,41 @@
 				<li><a href="/games">Games</a></li>
 				<li><a href="/contactus">Contact</a></li>
 				<li><a href="/aboutus">About</a></li>
-				<li><a href="/login"><span class="glyphicon glyphicon-user"></span> Login</a></li>
-				<li><a href="/checkout"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+				
+			<!-- 	<li>
+					<span th:if="${user==null}"><a href="/login">Login</a></span>
+					<span th:unless="${user==null}">
+						<a href="javascript:void(0)" class="dropbtn1">
+			    		<span class="glyphicon glyphicon-user"></span>
+			    		<span th:text="${user}"></span>
+			    	</a>
+	    			<ul class="dropdown1-content">
+		    			<li><a class="dropdown1-content-a" href="/orderhistory/1">Orders</a></li>
+		      			<li><a class="dropdown1-content-a" href="#"><span style="color: red; font-weight: bold;" class="glyphicon glyphicon-off"></span> Logout</a></li>
+		    		</ul>
+					</span>
+				</li> -->
+				<!-- 
+				<span th:if="${user==null}">456</span>
+	    		<span th:unless="${user==null}">123</span> -->
+			    <!-- <span th:unless="${user==null}"><span th:text="${user.fristname}"></span></span> -->
+				<li th:if="${user==null}"><a href="/login">Login</a></li>
+				<li th:unless="${user==null}" class="dropdown1">
+			    	<a href="javascript:void(0)" class="dropbtn1" style="color: #72ce62;">
+			    		<span class="glyphicon glyphicon-user"></span>
+			    		<span th:text="${user}"></span>&nbsp;<span class="glyphicon glyphicon-menu-down"></span>
+			    	</a>
+	    			<ul class="dropdown1-content">
+		    			<li><a class="dropdown1-content-a" href="/orderhistory/1">Orders</a></li>
+		      			<li><a class="dropdown1-content-a" href="/logout"><span style="color: red; font-weight: bold;" class="glyphicon glyphicon-off"></span> Logout</a></li>
+		    		</ul>
+			    </li>
+			    <li><a href="#" onclick="openCartPage(document.getElementById('cartForm'))"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+				
 		      </ul>
+		      <form id="cartForm" method="post" onSubmit="openCartPage(this.form)">
+			        <input type = "hidden" name = "mycart"/>			
+			  </form>
 		    </div>
 		  </div>
 		</nav>

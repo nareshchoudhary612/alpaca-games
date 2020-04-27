@@ -27,9 +27,19 @@ public class UserControllerImpl implements UserController {
 
 	@Override
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public ModelAndView showLogin() {
+	public ModelAndView showLogin(Model model) {
 		ModelAndView mav = new ModelAndView("html/login");
 		mav.addObject("message", "");
+		Users user = LoggedInUser.getUser();
+		String name = null;
+		if(user==null){
+			System.out.println("No User");
+		}else{
+			System.out.println("logged in user---->>"+ user.getUsername());
+			name= user.getUsername();
+		}
+		
+		model.addAttribute("loggedInUser",name);
 		mav.addObject("user", new Users());
 		return mav;
 	}

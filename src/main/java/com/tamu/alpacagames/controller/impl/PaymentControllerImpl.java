@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class PaymentControllerImpl {
 
 	@RequestMapping(value = "/payment", method = RequestMethod.GET)
-	public ModelAndView getAboutPage() {
+	public ModelAndView getPaymentPage() {
 		return new ModelAndView("html/payment");
 	}
 }
