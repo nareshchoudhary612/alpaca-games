@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.tamu.alpacagames.model.LoggedInUser;
 import com.tamu.alpacagames.model.Message;
 import com.tamu.alpacagames.model.Users;
 import com.tamu.alpacagames.repository.MessageRepository;
@@ -21,11 +22,22 @@ public class ContactUsControllerImpl {
 	
 	//@GetMapping("/contactus")
 	@RequestMapping(value = "/contactus", method = RequestMethod.GET)
-	public ModelAndView getContactPage() {
+	public ModelAndView getContactPage(Model model) {
 		
 		ModelAndView mav = new ModelAndView("html/contact_us");
 		mav.addObject("message", new Message());
 		mav.addObject("success", "");
+		Users user = LoggedInUser.getUser();
+		String name = null;
+		if(user==null){
+			System.out.println("No User");
+		}else{
+			System.out.println("logged in user---->>"+ user.getUsername());
+			name= user.getUsername();
+		}
+		
+		model.addAttribute("user",name);
+		
 		return mav;
 		
 	}
@@ -40,12 +52,34 @@ public class ContactUsControllerImpl {
 		ModelAndView mav = new ModelAndView("html/contact_us");
 		mav.addObject("message", new Message());
 		mav.addObject("success", "Thank you for your feedback. If required, we will get back to you");
+		
+		Users user = LoggedInUser.getUser();
+		String name = null;
+		if(user==null){
+			System.out.println("No User");
+		}else{
+			System.out.println("logged in user---->>"+ user.getUsername());
+			name= user.getUsername();
+		}
+		
+		model.addAttribute("user",name);
+		
 		return mav;
 		
 	}
 	
 	@RequestMapping(value = "/aboutus", method = RequestMethod.GET)
-	public ModelAndView getAboutPage() {
+	public ModelAndView getAboutPage(Model model) {
+		Users user = LoggedInUser.getUser();
+		String name = null;
+		if(user==null){
+			System.out.println("No User");
+		}else{
+			System.out.println("logged in user---->>"+ user.getUsername());
+			name= user.getUsername();
+		}
+		
+		model.addAttribute("user",name);
 		return new ModelAndView("html/about_us");
 	}
 	

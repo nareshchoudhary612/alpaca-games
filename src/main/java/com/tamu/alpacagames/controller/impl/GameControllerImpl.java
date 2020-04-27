@@ -11,7 +11,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.tamu.alpacagames.controller.GameController;
 import com.tamu.alpacagames.model.Game;
+import com.tamu.alpacagames.model.LoggedInUser;
 import com.tamu.alpacagames.model.OrderLine;
+import com.tamu.alpacagames.model.Users;
 import com.tamu.alpacagames.service.GameService;
 
 @Controller
@@ -24,6 +26,16 @@ public class GameControllerImpl implements GameController {
 	@GetMapping("/games")
 	public String gamePage(Model model) {
 		model.addAttribute("games", gameService.getGames());
+		Users user = LoggedInUser.getUser();
+		String name = null;
+		if(user==null){
+			System.out.println("No User");
+		}else{
+			System.out.println("logged in user---->>"+ user.getUsername());
+			name= user.getUsername();
+		}
+		
+		model.addAttribute("user",name);
 		return "html/Games";
 	}
 	
@@ -51,6 +63,18 @@ public class GameControllerImpl implements GameController {
 		System.out.println(gameService.getGameById(Long.parseLong(id)).get().getImageUrl1());
 		model.addAttribute("cart", new OrderLine());
 		System.out.println(gameService.getGameById(Long.parseLong(id)));
+		
+		Users user = LoggedInUser.getUser();
+		String name = null;
+		if(user==null){
+			System.out.println("No User");
+		}else{
+			System.out.println("logged in user---->>"+ user.getUsername());
+			name= user.getUsername();
+		}
+		
+		model.addAttribute("user",name);
+		
 		return new ModelAndView("html/product-details");
 	}
 }

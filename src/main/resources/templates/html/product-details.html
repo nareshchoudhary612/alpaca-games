@@ -17,41 +17,72 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="../css/product_details.css">
+	<script src="../js/cart.js"></script>
+	<link rel="stylesheet" href="../css/main.css">
 </head>
-<link rel="stylesheet" href="../css/main.css">
+
 <body id="home">
 
 	<!-- ##########################  NAVBAR ############################################-->
-	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse "
-		style="position: sticky;">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target="#myNavbar">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
-				<div class="title" style="position: absolute;">
-					<a href="/"> <img src="../images/icon.png" width="80px"
-						height="80px" style="vertical-align: text-bottom;"> <span
-						style="position: fixed; font-size: xx-large;">aLPACA GAMES</span>
-					</a>
-				</div>
-			</div>
-			<div class="collapse navbar-collapse" id="myNavbar" style="background-color: #333333; z-index: -1; height: 1px;">
+	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse " style="position:sticky;border-bottom: solid #254d85;" >
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>                        
+		      </button>
+		      <div class="title" style="    position: absolute;">
+				<a href="/">
+  				<img src="../images/icon.png" width="80px" height="80px" style="vertical-align: text-bottom;" >
+				<span style="position: fixed;font-size: xx-large;">aLPACA GAMES</span>
+				</a>
+  			  </div>
+		    </div>
+		    <div class="collapse navbar-collapse" id="myNavbar" style="background-color: #333333; z-index: -1; height: 1px;">
 		      <ul class="nav navbar-nav navbar-right" style="background-color: #333333;">
-					<li><a href="/">Home</a></li>
-					<li><a href="/games">Games</a></li>
-					<li><a href="/contactus">Contact</a></li>
-					<li><a href="/aboutus">About</a></li>
-					<li><a href="/login"><span
-							class="glyphicon glyphicon-user"></span> Login</a></li>
-					<li><a href="/checkout"><span
-							class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+		        <li><a href="/">Home</a></li>
+				<li><a href="/games">Games</a></li>
+				<li><a href="/contactus">Contact</a></li>
+				<li><a href="/aboutus">About</a></li>
+				
+			<!-- 	<li>
+					<span th:if="${user==null}"><a href="/login">Login</a></span>
+					<span th:unless="${user==null}">
+						<a href="javascript:void(0)" class="dropbtn1">
+			    		<span class="glyphicon glyphicon-user"></span>
+			    		<span th:text="${user}"></span>
+			    	</a>
+	    			<ul class="dropdown1-content">
+		    			<li><a class="dropdown1-content-a" href="/orderhistory/1">Orders</a></li>
+		      			<li><a class="dropdown1-content-a" href="#"><span style="color: red; font-weight: bold;" class="glyphicon glyphicon-off"></span> Logout</a></li>
+		    		</ul>
+					</span>
+				</li> -->
+				<!-- 
+				<span th:if="${user==null}">456</span>
+	    		<span th:unless="${user==null}">123</span> -->
+			    <!-- <span th:unless="${user==null}"><span th:text="${user.fristname}"></span></span> -->
+				<li th:if="${user==null}"><a href="/login">Login</a></li>
+				<li th:unless="${user==null}" class="dropdown1">
+			    	<a href="javascript:void(0)" class="dropbtn1" style="color: #72ce62;">
+			    		<span class="glyphicon glyphicon-user"></span>
+			    		<span th:text="${user}"></span>&nbsp;<span class="glyphicon glyphicon-menu-down"></span>
+			    	</a>
+	    			<ul class="dropdown1-content">
+		    			<li><a class="dropdown1-content-a" href="/orderhistory/1">Orders</a></li>
+		      			<li><a class="dropdown1-content-a" href="/logout"><span style="color: red; font-weight: bold;" class="glyphicon glyphicon-off"></span> Logout</a></li>
+		    		</ul>
+			    </li>
+			    <li><a href="#" onclick="openCartPage(document.getElementById('cartForm'))"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+				
+		      </ul>
+		      <form id="cartForm" method="post" onSubmit="openCartPage(this.form)">
+			        <input type = "hidden" name = "mycart"/>			
+			  </form>
+		    </div>
+		  </div>
+		</nav>
 	<!-- ###################### END OF  NAVBAR ############################################-->
 
 
@@ -102,13 +133,23 @@
 			</div>
 
 			<!-- Form -->
-			<form class="cart-form clearfix" th:action="@{/cart}" action="cart"
+	<!-- 		<form class="cart-form clearfix" th:action="@{/cart}" action="cart" 
 				th:object="${cart}" method="post" role="form">
 				<input type="hidden" name="gameId" th:value="${game.gameId}"></input>
-				<input type="hidden" name="finalPrice" th:value="${game.discount}"></input>
+				<input type="hidden" name="finalPrice" th:value="${game.discount}"></input>-->
 				<!-- Select Box -->
-				<div id="platform-dropdown">
+			<!-- 	<div id="platform-dropdown">
 					<select th:field="*{platform}" name="platform" id="Platform"
+						class=" dropdown btn-lg">
+						<option value="xbox">Platform: XBox</option>
+						<option value="xbox1">Platform: XBox ONE</option>
+						<option value="ps3">Platform: PS 3</option>
+						<option value="ps4">Platform: PS 4</option>
+						<option value="pc">Platform: PC</option>
+					</select>
+				</div> -->
+				<div id="platform-dropdown">
+					<select name="platform" id="Platform"
 						class=" dropdown btn-lg">
 						<option value="xbox">Platform: XBox</option>
 						<option value="xbox1">Platform: XBox ONE</option>
@@ -120,11 +161,11 @@
 				<!-- Cart & Favourite Box -->
 				<div>
 					<!-- Cart -->
-					<button type="submit" name="cart" value="5"
-						class="btn essence-btn">Add to Cart</button>
+					<div class="btn essence-btn" th:onclick="'javascript:addToCart(' + ${game.gameId} + ');addedToCartP(this);'">Add to Cart</div>
+					<button class="btn essence-btn yellow_color" onclick="openCartPage(document.getElementById('cartForm'));">Go to Cart</button>
 
 				</div>
-			</form>
+			<!-- </form> -->
 		</div>
 	</section>
 	<!-- ##### Single Product Details Area End ##### -->

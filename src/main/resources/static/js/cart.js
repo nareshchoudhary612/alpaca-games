@@ -32,6 +32,10 @@ var addedToCart = function(obj){
 	obj.innerHTML = '<span class="glyphicon glyphicon-ok"></span> Added';
 }
 
+var addedToCartP = function(obj){
+	obj.style.backgroundColor='green';
+	obj.innerHTML = 'Added';
+}
 
 var generateCart= function(){
 	var table = document.getELementById("cart_Table");
@@ -46,4 +50,32 @@ var openCartPage = function(f){
 	}	
 	f.action="/checkout";
     f.submit();
+}
+
+var onLoadCartSum = function(){
+	var gameListData = document.getElementById('gameListData').value;
+	var games = JSON.parse(gameListData);
+	var sum = 0;
+	for(var i = 0; i < games.length; i++){
+		sum+=games[i].discount;
+	}
+	var finalSum= sum + 6.94;
+	document.getElementById('totalCartValue').innerHTML='$'+sum.toFixed(2);
+	document.getElementById('finalCartValue').innerHTML='$'+finalSum.toFixed(2);
+}
+
+var removeFromCart = function(gameId, obj){
+	var rowDel = obj.parentNode.parentElement;
+	rowDel.parentNode.deleteRow(rowDel.rowIndex-1);
+		
+	//update sum
+	var valueRemove = rowDel.children[2].firstChild.firstChild.innerText;
+	var sum= document.getElementById('totalCartValue').innerHTML.substring(1);
+	var finalSum= document.getElementById('finalCartValue').innerHTML.substring(1);
+	document.getElementById('totalCartValue').innerHTML='$'+(sum-valueRemove).toFixed(2);
+	document.getElementById('finalCartValue').innerHTML='$'+(finalSum-valueRemove).toFixed(2);
+	
+	//remove from cache
+	deleteFromCart(gameId);
+	openCartPage(document.getElementById('cartForm'));
 }

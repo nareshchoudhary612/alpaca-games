@@ -17,18 +17,10 @@ public class HomepageControllerImpl implements HomepageController {
 	@Autowired
 	GameService gameService;
 	
-	/*
-	 * @Override
-	 * 
-	 * @GetMapping("/") public List<Game> getFrontGames() { List<Game>
-	 * homepageGames = gameService.getHomepageGames(); return homepageGames; }
-	 */
 		
 	@Override
 	@GetMapping(value= {"/","index.html"})
 	public ModelAndView getFrontGames(Model model) {
-		//Users user = new Users();
-	//	user.setFirstname("test");
 		model.addAttribute("games", gameService.getHomepageGames());
 		Users user = LoggedInUser.getUser();
 		String name = null;
@@ -39,7 +31,6 @@ public class HomepageControllerImpl implements HomepageController {
 			name= user.getUsername();
 		}
 		
-		//List<Game> homepageGames = gameService.getHomepageGames();
 		model.addAttribute("user",name);
 		return new ModelAndView("html/index");
 	}	
