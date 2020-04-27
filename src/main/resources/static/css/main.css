@@ -104,6 +104,11 @@
   transition: 0.5s;
 }
 
+.row_remove_margin{
+	margin-right: 0px;
+    margin-left: 0px;
+}
+
 .moregames_button:hover span {
   padding-right: 25px;
 }
