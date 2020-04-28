@@ -103,11 +103,12 @@ var setAmountDuringPayment=function(){
 
 
 var payment = function(){
+	var orderId=location.href.substring(location.href.indexOf('orderId=')+8,location.href.indexOf('&amount'));
 	if(document.getElementById('cardNumber').value.length==16 ||
-	document.getElementById('cardNumber').value.length!=0 ||
-	document.getElementById('cardNumber').value.length!=0 ||
-	document.getElementById('cardNumber').value.length!=0){
-		//
+		document.getElementById('expityMonth').value.length!=0 ||
+		document.getElementById('expityYear').value.length!=0 ||
+		document.getElementById('cvCode').value.length!=0){
+		location.href="/paymentComplete?orderId="+orderId;
 	}else{
 		alert("Incorrect Payment Details!");
 	}

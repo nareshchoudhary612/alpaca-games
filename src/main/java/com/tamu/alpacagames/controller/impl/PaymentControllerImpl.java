@@ -25,4 +25,18 @@ public class PaymentControllerImpl {
 		model.addAttribute("user",name);
 		return new ModelAndView("html/payment");
 	}
+	
+	@RequestMapping(value = "/paymentComplete", method = RequestMethod.POST)
+	public ModelAndView completePaymentPage(Model model) {
+		Users user = LoggedInUser.getUser();
+		String name = null;
+		if(user==null){
+			System.out.println("No User");
+		}else{
+			name= user.getUsername();
+			System.out.println("logged in user---->>"+ name);
+		}
+		model.addAttribute("user",name);
+		return new ModelAndView("html/payment");
+	}
 }
