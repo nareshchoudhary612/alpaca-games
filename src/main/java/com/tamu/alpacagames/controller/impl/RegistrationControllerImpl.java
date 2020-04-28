@@ -43,7 +43,7 @@ public class RegistrationControllerImpl implements RegistrationController {
 		 * mav.addObject("Thank you for creatin the account", message);
 		 */
 		
-		String msg = "Thank you "+createdUser.getFirstname()+ " for joining our family. Please login now.";
+		String msg = "Hey there, "+createdUser.getFirstname()+ " Welcome to the multiverse!.Please login now.";
 		mav.addObject("message", msg);
 		return mav;
 		
