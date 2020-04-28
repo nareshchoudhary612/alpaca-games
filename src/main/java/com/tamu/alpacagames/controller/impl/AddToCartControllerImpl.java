@@ -51,6 +51,7 @@ public class AddToCartControllerImpl{
 		
 		Users user = LoggedInUser.getUser();
 		String name = null;
+		long orderId = 0;
 		if(user==null){
 			System.out.println("No User");
 		}else{
@@ -58,7 +59,7 @@ public class AddToCartControllerImpl{
 			System.out.println("logged in user---->>"+ name);
 			//add to order and orderline
 			if(list.size()>0){
-				addToOrderLine(list,name);
+				orderId = addToOrderLine(list,name);
 			}
 		}
 		
@@ -66,10 +67,11 @@ public class AddToCartControllerImpl{
 		model.addAttribute("gameList",list);
 		model.addAttribute("gameListString",gson.toJson(list));
 		model.addAttribute("loggedInUser",name);
+		model.addAttribute("orderIdGenerated",orderId);
 		return new ModelAndView("html/cart");
 	}
 
-	private void addToOrderLine(List<Game> list, String name) {
+	private Long addToOrderLine(List<Game> list, String name) {
 		double billAmount = 0;
 				
 		java.util.Date today=new Date();
@@ -87,7 +89,6 @@ public class AddToCartControllerImpl{
 		val.setBillAmount(newInput);
 		val.setDeliveryStatus(false);		
 		val.setUserId(name);
-		val.setGameId((long)1);
 		Orders savedOrder= ordersRepository.save(val);
 		
 		for(Game game: list){
@@ -100,7 +101,7 @@ public class AddToCartControllerImpl{
 		}
 				
 		System.out.println("*---------cart saved-----------*");
-		
+		return savedOrder.getOrderId();
 	}
 	
 	
