@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,12 +39,14 @@ public class PaymentControllerImpl {
 		return new ModelAndView("html/payment");
 	}
 	
-	/*@RequestMapping(value = "/paymentComplete/{orderId}", method = RequestMethod.GET)*/
-	@GetMapping("/paymentComplete/{orderId}")
-	public ModelAndView completePaymentPage(@PathVariable("orderId") long orderId, Model model) {
+
+	@RequestMapping(value = "/paymentComplete", method = RequestMethod.POST)
+	public ModelAndView completePaymentPage(@ModelAttribute("orderId") String orderId, Model model) {
+	
+		System.out.println("Order ID-------->"+orderId);
+		ModelAndView mav = new ModelAndView("html/paymentCompleted");
 		
-		
-		Optional<Orders> orders = ordersRepository.findById(orderId);
+		Optional<Orders> orders = ordersRepository.findById(Long.parseLong(orderId));
 		Orders order = orders.get();
 		order.setDeliveryStatus(true);
 		ordersRepository.save(order);
@@ -54,10 +57,16 @@ public class PaymentControllerImpl {
 		}else{
 			name= user.getUsername();
 			System.out.println("logged in user---->>"+ name);
-		}
+		}		
+		
+		mav.addObject("user",name);
+		mav.addObject("orderID", orderId);
 		model.addAttribute("user",name);
 		model.addAttribute("orderID",orderId);
-		return new ModelAndView("html/paymentCompleted.html");
+		return mav;
+		
 	}
+	
+
 		
 }

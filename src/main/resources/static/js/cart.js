@@ -16,7 +16,7 @@ var addToCart= function(item){
 
 
 var deleteFromCart = function(item){
-	var mycart = JSON.parse(localStorage['cart']);
+	var myCart = JSON.parse(localStorage['cart']);
 	const index = myCart.indexOf(item);
 	if (index > -1) {
 		myCart.splice(index, 1);
@@ -87,8 +87,10 @@ var initiatePayment = function(){
 		var amount = document.getElementById('finalCartValue').innerHTML.substring(1);
 		if(orderId==0){
 			alert("Update your cart first!");
+		}else{
+			location.href="/payment?orderId="+orderId+"&"+"amount="+amount;
 		}
-		location.href="/payment?orderId="+orderId+"&"+"amount="+amount;
+		
 	}else{
 		alert("Please login before checking out!");
 	}
@@ -103,13 +105,28 @@ var setAmountDuringPayment=function(){
 
 
 var payment = function(){
+	var f = document.getElementById("paymentForm");
 	var orderId=location.href.substring(location.href.indexOf('orderId=')+8,location.href.indexOf('&amount'));
-	if(document.getElementById('cardNumber').value.length==16 ||
-		document.getElementById('expityMonth').value.length!=0 ||
-		document.getElementById('expityYear').value.length!=0 ||
-		document.getElementById('cvCode').value.length!=0){
-		location.href="/paymentComplete/"+orderId;
-	}else{
-		alert("Incorrect Payment Details!");
+	if(document.getElementById('cardNumber').value.length==16 &&
+		document.getElementById('expityMonth').value.length!=0 &&
+		document.getElementById('expityYear').value.length!=0 &&
+		document.getElementById('cvCode').value.length==3){
+		
+		location.href="/paymentComplete";
+		f.orderId.value = orderId;
+		f.action="/paymentComplete";
+	    f.submit();
+	}else
+	{
+	
+		/*$("#paymentForm").submit(function(e) {
+		    e.preventDefault();
+		});
+		*/
+	alert("Incorrect Payment Details!");
+	
+	/*	return;
+	}*/
 	}
+	return false;
 }
