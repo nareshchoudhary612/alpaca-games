@@ -80,7 +80,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
-						<h2 class="blue">Order History</h2>
+						<h2 class="blue">My Orders</h2>
 					</div>
 				</div>
 			</div>
@@ -95,7 +95,7 @@
                         <tr>
                             <th>Order ID</th>
                             <th>Date</th>
-                            <th class="text-center">Order Total</th>
+                            <th class="text-center">Total Amount</th>
                             <th class="text-center">Status</th>
                             <th> </th>
                         </tr>
@@ -110,7 +110,7 @@
                                 </div>
                             </div></td>
                             <td class="col-sm-1 col-sm-1" style="text-align: center">
-                            <input type="date" class="form-control" id="inputDate" th:value="${order.date}">
+                            <input type="date" onkeydown="return false" class="form-control" id="inputDate" th:value="${order.date}">
                             </td>
                             <td class="col-sm-2 col-sm-2 text-center" th:text="${order.billAmount}"></td>
                             <td class="col-sm-2 col-sm-2 text-center" th:text="${order.deliveryStatus}" ></td>
@@ -135,7 +135,7 @@
 			<div class="footer-left">
 				<p class="footer-links">
 					<a href="/">Home</a>
-					<a href="/games">Games</a>
+					<a href="#">Games</a>
 					<a href="/contactus">Contact</a>
 					<a href="/aboutus">About</a>
 				</p>

@@ -7,4 +7,6 @@ public interface OrderService {
     List<Orders> GetOrdersByUserId(String userId);
 
 	Object getOrders();
+
+	List<Orders> findByUserIdAndDeliveryStatus(String name);
 }
