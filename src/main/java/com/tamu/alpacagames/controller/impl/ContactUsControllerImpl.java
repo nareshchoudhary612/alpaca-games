@@ -62,7 +62,7 @@ public class ContactUsControllerImpl {
 		}
 		
 		model.addAttribute("user",name);
-		model.addAttribute("success", "Thank you for contacting us.We will get in touch with you soon. Have a great day!");
+		model.addAttribute("success", "You did it, I knew it! It's super effective!.We will get in touch with you soon.");
 		return mav;
 		
 	}
