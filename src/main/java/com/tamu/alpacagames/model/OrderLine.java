@@ -16,15 +16,15 @@ public class OrderLine {
 	Long gameId;
 	Long orderId;
 	String platform;
-
+	double finalPrice;
+	
 	public String getPlatform() {
 		return platform;
 	}
 	public void setPlatform(String platform) {
 		this.platform = platform;
 	}
-	double finalPrice;
-
+	
 	public Long getLineId() {
 		return lineId;
 	}
