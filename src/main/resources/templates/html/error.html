@@ -1,46 +1,54 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 
-	<head>
-		<title>Error Page</title>
-    	<meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="../css/main.css">
-		<link rel="stylesheet" href="../css/footer.css">
-		<link rel="shortcut icon" type="../images/icon.png" href="../images/icon.png"/>
+<head>
+<title>Error Page</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/footer.css">
+<link rel="shortcut icon" type="../images/icon.png"
+	href="../images/icon.png" />
 
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="../css/error.css">
-	</head>
-  
-	<body id="error-page">
-		
-		<nav class="navbar navbar-default navbar-fixed-top navbar-inverse " style="position:sticky;border-bottom: solid #254d85;" >
-		  <div class="container-fluid">
-		    <div class="navbar-header">
-		      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>                        
-		      </button>
-		      <div class="title" style="    position: absolute;">
-				<a href="/">
-  				<img src="../images/icon.png" width="80px" height="80px" style="vertical-align: text-bottom;" >
-				<span style="position: fixed;font-size: xx-large;">aLPACA GAMES</span>
-				</a>
-  			  </div>
-		    </div>
-		    <div class="collapse navbar-collapse" id="myNavbar" style="background-color: #333333; z-index: -1; height: 1px;">
-		      <ul class="nav navbar-nav navbar-right" style="background-color: #333333;">
-		        <li><a href="/">Home</a></li>
-				<li><a href="/games">Games</a></li>
-				<li><a href="/contactus">Contact</a></li>
-				<li><a href="/aboutus">About</a></li>
-				
-			<!-- 	<li>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="../css/error.css">
+</head>
+
+<body id="error-page">
+
+	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse "
+		style="position: sticky; border-bottom: solid #254d85;">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<div class="title" style="position: absolute;">
+					<a href="/"> <img src="../images/icon.png" width="80px"
+						height="80px" style="vertical-align: text-bottom;"> <span
+						style="position: fixed; font-size: xx-large;">aLPACA GAMES</span>
+					</a>
+				</div>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar"
+				style="background-color: #333333; z-index: -1; height: 1px;">
+				<ul class="nav navbar-nav navbar-right"
+					style="background-color: #333333;">
+					<li><a href="/">Home</a></li>
+					<li><a href="/games">Games</a></li>
+					<li><a href="/contactus">Contact</a></li>
+					<li><a href="/aboutus">About</a></li>
+
+					<!-- 	<li>
 					<span th:if="${user==null}"><a href="/login">Login</a></span>
 					<span th:unless="${user==null}">
 						<a href="javascript:void(0)" class="dropbtn1">
@@ -53,74 +61,95 @@
 		    		</ul>
 					</span>
 				</li> -->
-				<!-- 
+					<!-- 
 				<span th:if="${user==null}">456</span>
 	    		<span th:unless="${user==null}">123</span> -->
-			    <!-- <span th:unless="${user==null}"><span th:text="${user.fristname}"></span></span> -->
-				<li th:if="${user==null}"><a href="/login">Login</a></li>
-				<li th:unless="${user==null}" class="dropdown1">
-			    	<a href="javascript:void(0)" class="dropbtn1" style="color: #72ce62;">
-			    		<span class="glyphicon glyphicon-user"></span>
-			    		<span th:text="${user}"></span>&nbsp;<span class="glyphicon glyphicon-menu-down"></span>
-			    	</a>
-	    			<ul class="dropdown1-content">
-		    			<li><a class="dropdown1-content-a" href="/orderhistory/1">Orders</a></li>
-		      			<li><a class="dropdown1-content-a" href="/logout"><span style="color: red; font-weight: bold;" class="glyphicon glyphicon-off"></span> Logout</a></li>
-		    		</ul>
-			    </li>
-			    <li><a href="#" onclick="openCartPage(document.getElementById('cartForm'))"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
-				
-		      </ul>
-		      <form id="cartForm" method="post" onSubmit="openCartPage(this.form)">
-			        <input type = "hidden" name = "mycart"/>			
-			  </form>
-		    </div>
-		  </div>
-		</nav>
-		
-			
-		<br>	
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-2 col-lg-2">				
-				
-					</div>
-				<div class="col-sm-3 col-lg-3">				
-				<img src="../images/404_alpaca.png" width="250px" height="380px" style="vertical-align: text-bottom;" >			
-				
-				</div>
-				<div class="col-sm-7 col-lg-7">	
-					<p class="error">404 !! </p>			
-					<p class="error-message">Uhhh! Don't cry.<br>
-						That part is not explored yet, <br>
-						we will discover it soon!</p>	
-						<p class="home">Let's go home...</p>	
-						<a href="/"> <button type="button" class="btn btn-primary active btn-lg" role="button" >Home</button></a>
-						
-					</div>
-					
+					<!-- <span th:unless="${user==null}"><span th:text="${user.fristname}"></span></span> -->
+					<li th:if="${user==null}"><a href="/login">Login</a></li>
+					<li th:unless="${user==null}" class="dropdown1"><a
+						href="javascript:void(0)" class="dropbtn1" style="color: #72ce62;">
+							<span class="glyphicon glyphicon-user"></span> <span
+							th:text="${user}"></span>&nbsp;<span
+							class="glyphicon glyphicon-menu-down"></span>
+					</a>
+						<ul class="dropdown1-content">
+							<li><a class="dropdown1-content-a" href="/orderhistory/1">Orders</a></li>
+							<li><a class="dropdown1-content-a" href="/logout"><span
+									style="color: red; font-weight: bold;"
+									class="glyphicon glyphicon-off"></span> Logout</a></li>
+						</ul></li>
+					<li><a href="#"
+						onclick="openCartPage(document.getElementById('cartForm'))"><span
+							class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+
+				</ul>
+				<form id="cartForm" method="post" onSubmit="openCartPage(this.form)">
+					<input type="hidden" name="mycart" />
+				</form>
 			</div>
-					
 		</div>
-		
-		<br>	
-	<footer class="footer-distributed">
-			<div class="footer-right">
-				<a href="https://facebook.com/"><i class="fa fa-facebook"></i></a>
-				<a href="https://twitter.com/"><i class="fa fa-twitter"></i></a> 
-				<a href="https://linkedin.com/"><i class="fa fa-linkedin"></i></a>
-				<a href="https://github.com/chetan2119/alpaca-games"><i class="fa fa-github"></i></a>
+	</nav>
+
+
+	<br>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3 col-lg-3"></div>
+			<div class="col-sm-3 col-lg-3">
+				<img src="../images/404_alpaca.png" width="250px" height="380px"
+					style="vertical-align: text-bottom;">
 			</div>
-			<div class="footer-left">
-				<p class="footer-links">
-					<a href="/">Home</a>
-					<a href="#">Games</a>
-					<a href="/contactus">Contact</a>
-					<a href="/aboutus">About</a>
+			<div class="col-sm-6 col-lg-6">
+				<p class="error">404 !!</p>
+				<p class="error-message">
+					Uhhh! Don't cry.<br> That part is not explored yet, <br>
+					we will discover it soon!
 				</p>
-				<p>Alpaca Games &copy; 2020</p>
+				<p class="home">Let's go home...</p>
+				<a href="/">
+					<button type="button" class="btn btn-primary active btn-lg"
+						role="button">Home</button>
+				</a>
 			</div>
-		</footer>
-  		
-	</body>
+
+		</div>
+		<div class="row">
+			<div class="col-sm-3 col-lg-3"></div>
+			<div class="col-sm-7 col-lg-7">
+				<br> <br> <br>
+				<p class="enjoy-video">Meanwhile, you can also enjoy this
+					video....</p>
+			</div>
+
+		</div>
+		<div class="row">
+			<div class="col-sm-12 col-lg-12 text-center">
+				<br>
+				<iframe width="560" height="315"
+					src="https://www.youtube.com/embed/VSltMzg-8Tw" frameborder="0"
+					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+
+	<br>
+	<footer class="footer-distributed">
+		<div class="footer-right">
+			<a href="https://facebook.com/"><i class="fa fa-facebook"></i></a> <a
+				href="https://twitter.com/"><i class="fa fa-twitter"></i></a> <a
+				href="https://linkedin.com/"><i class="fa fa-linkedin"></i></a> <a
+				href="https://github.com/chetan2119/alpaca-games"><i
+				class="fa fa-github"></i></a>
+		</div>
+		<div class="footer-left">
+			<p class="footer-links">
+				<a href="/">Home</a> <a href="#">Games</a> <a href="/contactus">Contact</a>
+				<a href="/aboutus">About</a>
+			</p>
+			<p>Alpaca Games &copy; 2020</p>
+		</div>
+	</footer>
+
+</body>
 </html>
