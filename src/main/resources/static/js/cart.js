@@ -108,7 +108,7 @@ var payment = function(){
 		document.getElementById('expityMonth').value.length!=0 ||
 		document.getElementById('expityYear').value.length!=0 ||
 		document.getElementById('cvCode').value.length!=0){
-		location.href="/paymentComplete?orderId="+orderId;
+		location.href="/paymentComplete/"+orderId;
 	}else{
 		alert("Incorrect Payment Details!");
 	}
