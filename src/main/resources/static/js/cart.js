@@ -79,3 +79,13 @@ var removeFromCart = function(gameId, obj){
 	deleteFromCart(gameId);
 	openCartPage(document.getElementById('cartForm'));
 }
+
+var initiatePayment = function(){
+	//login true continue else error
+	if(document.getElementById("loggedInUser")){
+		var game = document.getElementById("gameListData").value;
+		location.href="/payment";
+	}else{
+		alert("Please login before checking out!");
+	}
+}

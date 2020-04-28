@@ -4,13 +4,13 @@
 	    <title>Cart</title>
 	    <meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="../css/main.css">
-	    <link rel="stylesheet" href="../css/footer.css">
+		<link rel="stylesheet" href="../css/footer.css">
 	    <link rel="shortcut icon" type="../images/icon.png" href="../images/icon.png"/>
 	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">  
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>    
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">    
+	    <link rel="stylesheet" href="../css/main.css">
 	    <script src="../js/cart.js"></script>
     </head>
   
@@ -59,7 +59,7 @@
 				<li th:unless="${loggedInUser==null}" class="dropdown1">
 			    	<a href="javascript:void(0)" class="dropbtn1" style="color: #72ce62;">
 			    		<span class="glyphicon glyphicon-user"></span>
-			    		<span th:text="${loggedInUser}"></span>&nbsp;<span class="glyphicon glyphicon-menu-down"></span>
+			    		<span id="loggedInUser" th:text="${loggedInUser}"></span>&nbsp;<span class="glyphicon glyphicon-menu-down"></span>
 			    	</a>
 	    			<ul class="dropdown1-content">
 		    			<li><a class="dropdown1-content-a" href="/orderhistory/1">Orders</a></li>
@@ -102,7 +102,7 @@
                                 <div class="media-body">
                                     <h4 class="media-heading" ><a th:href="@{'/game/' + ${game.gameId}}" th:text="${game.name}"></a></h4>
                                     <h5 class="media-heading"> by <span th:text="${game.creater}"></span></h5>
-                                    <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
+                                    <!-- <span>Status: </span><span class="text-success"><strong>In Stock</strong></span> -->
                                 </div>
                             </div></td>
                             <!-- <td class="col-sm-1 col-sm-1" style="text-align: center">
@@ -145,82 +145,14 @@
                                 <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
                             </button></td>
                             <td>
-                            <button type="button" class="btn btn-success" onclick="location.href = '/payment';">
+                            <!-- <button type="button" class="btn btn-success" onclick="location.href = '/payment';"> -->
+                            <button type="button" class="btn btn-success" onclick="initiatePayment();">
                                 Checkout <span class="glyphicon glyphicon-play"></span>
                             </button></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <!-- <div class="col-sm-6  ">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Product</th>
-                            <th>Quantity</th>
-                            <th class="text-center">Price</th>
-                            <th class="text-center">Total</th>
-                            <th> </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="col-sm-8 col-sm-6">
-                            <div class="media">
-                                <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading" ><a th:href="@{'/game/' + ${game.gameId}}" th:text="${game.name}"></a></h4>
-                                    <h5 class="media-heading"> by <span th:text="${game.creater}"></span></h5>
-                                    <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
-                                </div>
-                            </div></td>
-                            <td class="col-sm-1 col-sm-1" style="text-align: center">
-                            <input type="text" class="form-control" id="exampleInputEmail1" value="1">
-                            </td>
-                            <td class="col-sm-1 col-sm-1 text-center"><strong><span th:text="${game.price}"></span></strong></td>
-                            <td class="col-sm-1 col-sm-1 text-center"><strong><span th:text="${game.price}"></span></strong></td>
-                            <td class="col-sm-1 col-sm-1">
-                            <button type="button" class="btn btn-danger">
-                                <span class="glyphicon glyphicon-remove"></span> Remove
-                            </button></td>
-                        </tr>
-                        
-                            <td>   </td>
-                            <td>   </td>
-                            <td>   </td>
-                            <td><h5>Subtotal</h5></td>
-                            <td class="text-right"><h5><strong>$49.00</strong></h5></td>
-                        </tr>
-                        <tr>
-                            <td>   </td>
-                            <td>   </td>
-                            <td>   </td>
-                            <td><h5>Estimated shipping</h5></td>
-                            <td class="text-right"><h5><strong>$6.94</strong></h5></td>
-                        </tr>
-                        <tr>
-                            <td>   </td>
-                            <td>   </td>
-                            <td>   </td>
-                            <td><h3>Total</h3></td>
-                            <td class="text-right"><h3><strong>$55.94</strong></h3></td>
-                        </tr>
-                        <tr>
-                            <td>   </td>
-                            <td>   </td>
-                            <td>   </td>
-                            <td>
-                            <button type="button" onclick="location.href = '/games';" class="btn btn-default">
-                                <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
-                            </button></td>
-                            <td>
-                            <button type="button" class="btn btn-success" onclick="location.href = '/payment';">
-                                Checkout <span class="glyphicon glyphicon-play"></span>
-                            </button></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div> -->
         </div>
     </div>
  <br> <br>
