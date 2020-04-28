@@ -18,6 +18,7 @@ public class Orders {
 	double billAmount;
 	boolean deliveryStatus;
 	Date date;
+	long gameId;
 	String userId;
 
 	public Long getOrderId() {
@@ -43,6 +44,12 @@ public class Orders {
 	}
 	public void setDate(Date date) {
 		this.date = date;
+	}
+	public long getGameId() {
+		return gameId;
+	}
+	public void setGameId(long gameId) {
+		this.gameId = gameId;
 	}
 	public String getUserId() {
 		return userId;
