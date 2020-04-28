@@ -83,9 +83,32 @@ var removeFromCart = function(gameId, obj){
 var initiatePayment = function(){
 	//login true continue else error
 	if(document.getElementById("loggedInUser")){
-		var game = document.getElementById("gameListData").value;
-		location.href="/payment";
+		var orderId = document.getElementById('orderIdGenerated').value
+		var amount = document.getElementById('finalCartValue').innerHTML.substring(1);
+		if(orderId==0){
+			alert("Update your cart first!");
+		}
+		location.href="/payment?orderId="+orderId+"&"+"amount="+amount;
 	}else{
 		alert("Please login before checking out!");
+	}
+}
+
+
+var setAmountDuringPayment=function(){
+	var orderId=location.href.substring(location.href.indexOf('orderId=')+8,location.href.indexOf('&amount'));
+	var amount=location.href.substring(location.href.indexOf('&amount=')+8);
+	document.getElementById('finalAmnt').innerHTML = amount;
+}
+
+
+var payment = function(){
+	if(document.getElementById('cardNumber').value.length==16 ||
+	document.getElementById('cardNumber').value.length!=0 ||
+	document.getElementById('cardNumber').value.length!=0 ||
+	document.getElementById('cardNumber').value.length!=0){
+		//
+	}else{
+		alert("Incorrect Payment Details!");
 	}
 }
