@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html  xmlns:th="http://www.thymeleaf.org">
 	<head>
     <title>Make Payment</title>
     <meta charset="utf-8">
@@ -79,6 +79,7 @@
       <div class="container">
         <div class="row" style="margin-bottom:150px">
             <div class="col-lg-12 col-lg-4"></div>
+            <form id="paymentForm" method="post">
             <div id="paymentCapture" class="col-lg-12 col-lg-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -92,8 +93,8 @@
                             </label>
                         </div>
                     </div>
-                    <div class="panel-body">
-                        <form role="form">
+                    <input type = "hidden" id = "orderId" name = "orderId"/>
+                    <div class="panel-body" >                        
                         <div class="form-group">
                             <label for="cardNumber">
                                 CARD NUMBER</label>
@@ -123,7 +124,7 @@
                                 </div>
                             </div>
                         </div>
-                        </form>
+                        
                     </div>
                 </div>
                 <ul class="nav nav-pills nav-stacked">
@@ -131,8 +132,8 @@
                     </li>
                 </ul>
                 <br/>
-                <a href="" class="btn btn-success btn-lg btn-block" role="button" style="color:#fff;background-color:#204a86ba;" onclick="payment()">PAY</a>
-            </div>
+                <button type="button" onClick="payment();" class="btn btn-success btn-lg btn-block" role="button" style="color:#fff;background-color:#204a86ba;" >PAY</button>
+            </div></form>
             <div class="col-lg-12 col-lg-4"></div>
         </div>
     </div>
