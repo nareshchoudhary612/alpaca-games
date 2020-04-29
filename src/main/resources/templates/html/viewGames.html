@@ -70,7 +70,7 @@
 			    		<span th:text="${user}"></span>&nbsp;<span class="glyphicon glyphicon-menu-down"></span>
 			    	</a>
 	    			<ul class="dropdown1-content">
-		    			<li><a class="dropdown1-content-a" href="/orderhistory/1">Orders</a></li>
+		    			<li><a class="dropdown1-content-a" th:href= "'/orderhistory/' + ${user}">Orders</a></li>
 		      			<li><a class="dropdown1-content-a" href="/logout"><span style="color: red; font-weight: bold;" class="glyphicon glyphicon-off"></span> Logout</a></li>
 		    		</ul>
 			    </li>
